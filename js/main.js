@@ -18,7 +18,7 @@ const item = {
     fashion: 'Classical style',
     colors: ['Black', 'Blue'],
     sizes: ['UK 52', 'UK 54', 'UK 56'],
-    thumbnail: 'img/catalog/good5.png', // replace with image extracted from item layout
+    thumbnail: 'img/photo/man-suit.jpg', // replace with image extracted from item layout
     preview: ['img/item/full.png', 'img/item/small-img.png', 'img/item/small2.png'] // replace with paths to images extracted from item layout
 };
 burger.addEventListener('click', function () {

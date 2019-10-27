@@ -1,15 +1,19 @@
 const basketDiv = document.querySelector('#basketDiv');
 const fullPrice = document.querySelector('#full-price');
-console.log()
+const summaryBlock = document.querySelector("#summary-price");
+const emptyBtn = document.querySelector("#empty-btn");
+const buyBtn = document.querySelector('#buy-btn');
+
 function showBasket() {
     let out = '';
     let sum = 0;
     if (Object.keys(basket).length == 0) {
-        out += 'Empty bag';
+        out += '<div class="empty-info">Your shopping bag is empty. Use Catalog to add new items</div>';
+        summaryBlock.style.display = "none";
     } else {
+        let test = item;
         for (let key in basket) {
-            if (key == item.id) {
-                test = item;
+            if (key == item.id) {   
             }
             out +=
                 `<div class="basket__item basket-item">
@@ -42,8 +46,9 @@ function showBasket() {
                         <button class="basket-item-desc__remove" data-delete="${test.id}">Remove item</button>
                     </div>
                 </div>`;
-                sum += basket[key]* item.discountedPrice;
+            sum += basket[key] * test.discountedPrice;
         }
+        summaryBlock.style.display = "block";
     }
     fullPrice.innerHTML = "£" + sum.toFixed(2);
     basketDiv.innerHTML = out;
@@ -71,6 +76,25 @@ basketDiv.addEventListener('click', function (e) {
         showBasketCounts();
         showBasket();
     }
+});
+emptyBtn.addEventListener('click', function () {
+    for (let key in basket) {
+        delete basket[key];
+        localStorage.setItem('basket', JSON.stringify(basket));
+    }
+    showBasket();
+    showBasketCounts();
+    window.scrollTo(pageXOffset, 0);
+});
+buyBtn.addEventListener('click', function (e) {
+    for (let key in basket) {
+        delete basket[key];
+        localStorage.setItem('basket', JSON.stringify(basket));
+    }
+    showBasket();
+    showBasketCounts();
+    basketDiv.innerHTML = '<div class="empty-info">Thank you for your purchase</div>';
+    window.scrollTo(pageXOffset, 0);
 });
 checkBasket();
 showBasket();

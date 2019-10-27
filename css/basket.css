@@ -1,8 +1,23 @@
-* {
+/* * {
   font-family: "Open Sans", sans-serif;
+} */
+body {
+  height: 100vh;
 }
 header {
   margin-bottom: 0;
+}
+
+main {
+  flex: 1 0 auto;
+}
+.wrapper{
+  display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+footer{
+  flex: 0 0 auto;
 }
 /* 
     font-family: "Roboto", sans-serif;
@@ -13,6 +28,7 @@ header {
   font-weight: 700;
   padding: 20px 0 20px 10px;
 }
+
 .basket .container {
   font-family: "Roboto", sans-serif;
   padding-top: 15px;
@@ -21,11 +37,44 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.empty-info {
+  text-align: center;
+  line-height: 160%;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100%;
+  padding: 30px 0;
+}
 .basket-item {
   display: flex;
   margin: 0 auto 42px auto;
   width: 100%;
   max-width: 480px;
+  cursor: pointer;
+}
+.basket-item:hover .basket-item-desc__title{
+  color: #f14a58;
+}
+.basket-item:hover .basket-item__img::before {
+  content: "";
+  width: 100%;
+  /* margin-left: 5px; */
+  height: 99%;
+  z-index: 99;
+  position: absolute;
+  background: rgba(36, 35, 35, 0.616);
+}
+.basket-item:hover .basket-item__img::after {
+  position: absolute;
+  z-index: 100;
+  content: "View Item";
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
+  color: #f14a58;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .basket-item__img {
   position: relative;
@@ -161,7 +210,7 @@ header {
 .discount-price {
   font-size: 14px;
 }
-.full{
+.full {
   text-align: center;
 }
 .full-text,
@@ -175,6 +224,9 @@ header {
 @media (min-width: 768px) {
   .basket .container {
     padding-top: 30px;
+  }
+  .empty-info {
+    padding-bottom: 42px;
   }
   .title-basket {
     font-size: 20px;
@@ -195,6 +247,9 @@ header {
   .basket-item-desc__quantity {
     font-size: 12px;
     margin-bottom: 15px;
+  }
+  .basket-item-desc__remove {
+    font-size: 13px;
   }
   .basket-item-desc__size {
     margin-bottom: 10px;
@@ -237,6 +292,9 @@ header {
 @media (min-width: 1024px) {
   .basket .container {
     padding-bottom: 27px;
+  }
+  .empty-info {
+    padding-bottom: 30px;
   }
   .title-basket {
     font-size: 26px;
