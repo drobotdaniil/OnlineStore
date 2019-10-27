@@ -26,14 +26,22 @@ const showCatalog = () =>{
     for(let i = 0; i <catalog.length; i++){
         out += `<a href="item.html" class="item">
         <div class="item__img">
-            <img src="${catalog[i].thumbnail}" alt="${catalog[i].title}">
-            <span class="stick-new">NEW</span>
-        </div>
+            <img src="${catalog[i].thumbnail}" alt="${catalog[i].title}">`;
+            if(catalog[i].hasNew){
+                out += `<span class="stick-new">NEW</span>`;
+            }  
+        out += `</div>
         <p class="item__name">${catalog[i].title}</p>
-        <div class="item__price">
-            <div class="item-price__old"><span></span> £120.00</div>
-            <div class="item-price__new">£${(catalog[i].price).toFixed(2)}</div>
-        </div>
+        <div class="item__price">`;
+        if(catalog[i].price != catalog[i].discountedPrice && catalog[i].discountedPrice != null){
+            out += `<div class="item-price__old"><span></span> £${catalog[i].discountedPrice}</div>
+            <div class="item-price__new">£${catalog[i].price}</div>`;
+        } else if(catalog[i].discountedPrice == null){
+            out +=`<div class="item-price__new">£${catalog[i].price}</div>`;
+        } else{
+            out +=`<div class="item-price__new">£${catalog[i].discountedPrice}</div>`;
+        }
+        out += `</div>
     </a>`;
     }
     catalogDiv.innerHTML = out;

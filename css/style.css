@@ -385,6 +385,7 @@ header .banners-items__right img {
   font-size: 12px;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
+  text-align: center;
 }
 .item__price {
   margin-top: 20px;
@@ -399,11 +400,11 @@ header .banners-items__right img {
 }
 .item-price__old span {
   position: absolute;
-  width: 49px;
+  width: 47px;
   height: 2px;
   background: #f14a58;
-  transform: rotate(-31deg);
-  top: 52%;
+  transform: rotate(-31deg) translate(-32%, -50%);
+  top: -14%;
 }
 .total-block {
   width: 100%;
