@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Catalog</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/catalog.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="head">
+                <a href="start.html" class="logo">
+                    <span>Template</span>
+                </a>
+                <div class="bag">
+                    <a href="#" class="email">
+                        E-mail sing up
+                    </a>
+                    <a href="basket.html" class="cart">
+                        <img src="img/ico_bag.png" alt="ico-bag" class="cart-ico">
+                        Bag <span class="cart-price" id="cart-price"></span> (<span class="cart-counts" id="cart-counter">0</span>)
+                    </a>
+                    <div class="burger">
+                        <span></span>
+                        <img src="img/ico_close.png" alt="close" class="hidden">
+                    </div>
+                </div>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="menu__item active"><a href="">Women</a></li>
+                    <li class="menu__item"><a href="">Men</a></li>
+                    <li class="menu__item"><a href="">Handbags</a></li>
+                    <li class="menu__item"><a href="">Accessories</a></li>
+                    <li class="menu__item"><a href="">Sale</a></li>
+                    <li class="menu__item"><a href="">New Arrivals</a></li>
+                    <li class="menu__item"><a href="">Clearance</a></li>
+                    <li class="menu__item"><a href="">Store Locator</a></li>
+                </ul>
+                <label for="search" class="search-label">
+                    <input type="text" placeholder="Style Name" id="search" class="search-input">
+                    <img src="img/ico-search.png" alt="ico-search">
+                </label>
+            </nav>
+        </div>
+        <div class="hr"></div>
+        <div class="filters">
+            <div class="container">
+                <div class="wrap-select">
+                    <span>Fashion</span>
+                    <select name="fashion" id="" class="filter__fashion">
+                        <option value="1">Not selected</option>
+                        <option value="2">Fashion Style</option>
+                        <option value="3">Fashion Style</option>
+                    </select>
+                </div>
+                <div class="wrap-select">
+                    <span>Product type</span>
+                    <select name="product-type" id="" class="filter__product">
+                        <option value="1">Not selected</option>
+                        <option value="2">Fashion Style</option>
+                        <option value="3">Fashion Style</option>
+                    </select>
+                </div>
+                <div class="wrap-select">
+                    <span>Color</span>
+                    <select name="color" id="" class="filter__color">
+                        <option value="1">Not selected</option>
+                        <option value="2">Black</option>
+                        <option value="3">Red</option>
+                        <option value="3">Pink</option>
+                        <option value="3">Yellow</option>
+                    </select>
+                </div>
+                <div class="wrap-select">
+                    <span>Brand</span>
+                    <select name="brand" id="" class="filter__brand">
+                        <option value="1">Not selected</option>
+                        <option value="2">Fashion Style</option>
+                        <option value="3">Fashion Style</option>
+                    </select>
+                </div>
+                <div class="wrap-select">
+                    <span>Size</span>
+                    <select name="size" id="" class="filter__size">
+                        <option value="1">Not selected</option>
+                        <option value="2">Fashion Style</option>
+                        <option value="3">Fashion Style</option>
+                    </select>
+                </div>
+                <div class="wrap-select">
+                    <span>Price range</span>
+                    <select name="price" id="" class="filter__price">
+                        <option value="1">Not selected</option>
+                        <option value="2">Fashion Style</option>
+                        <option value="3">Fashion Style</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="filters-tablet">
+            <div class="show-filters">
+                <div class="container">
+                    <h3>
+                        Casual style, Product type, Color, Antipodium, UK 18, Price range
+                    </h3>
+                    <button class="btn-v">&#8250;</button>
+                    <img src="img/ico_close.png" alt="close" class="hidden btn-x">
+                </div>
+            </div>
+            <div class="hr"></div>
+            <div class="filters-open">
+                <div class="container stupid">
+                    <div class="wrap-radio">
+                        <h3>Fashion</h3>
+                        <div class="radios">
+                            <input id="fashion1" type="radio" name="fashion" value="" checked>
+                            <label for="fashion1">Not selected</label>
+                            <input id="fashion2" type="radio" name="fashion" value="">
+                            <label for="fashion2">Nail the 90s</label>
+                            <input id="fashion3" type="radio" name="fashion" value="">
+                            <label for="fashion3">Casual style</label>
+                            <input id="fashion4" type="radio" name="fashion" value="">
+                            <label for="fashion4">New Look</label>
+                            <input id="fashion5" type="radio" name="fashion" value="">
+                            <label for="fashion5">Sport</label>
+                            <input id="fashion6" type="radio" name="fashion" value="">
+                            <label for="fashion6">Vintage</label>
+                            <input id="fashion7" type="radio" name="fashion" value="">
+                            <label for="fashion7">Сlassical style</label>
+                        </div>
+                    </div>
+                    <div class="wrap-radio">
+                        <h3>Product type</h3>
+                        <div class="radios">
+                            <input id="product1" type="radio" name="product" value="" checked>
+                            <label for="product1">Not selected</label>
+                            <input id="product2" type="radio" name="product" value="">
+                            <label for="product2">Coats & Jackets</label>
+                            <input id="product3" type="radio" name="product" value="">
+                            <label for="product3">Dresses</label>
+                            <input id="product4" type="radio" name="product" value="">
+                            <label for="product4">Jersey Tops</label>
+                        </div>
+                    </div>
+                    <div class="wrap-radio">
+                        <h3>Color</h3>
+                        <div class="radios">
+                            <input id="color1" type="radio" name="color" value="" checked>
+                            <label for="color1">Not selected</label>
+                            <input id="color2" type="radio" name="color" value="">
+                            <label for="color2">Black</label>
+                            <input id="color3" type="radio" name="color" value="">
+                            <label for="color3">Blue</label>
+                            <input id="color4" type="radio" name="color" value="">
+                            <label for="color4">Red</label>
+                            <input id="color5" type="radio" name="color" value="">
+                            <label for="color5">Green</label>
+                            <input id="color6" type="radio" name="color" value="">
+                            <label for="color6">Golden</label>
+                        </div>
+                    </div>
+                    <div class="wrap-radio">
+                        <h3>Brand</h3>
+                        <div class="radios">
+                            <input id="brand" type="radio" name="brand" value="" checked>
+                            <label for="brand1">Not selected</label>
+                            <input id="brand2" type="radio" name="brand" value="">
+                            <label for="brand2">Adidas</label>
+                            <input id="brand3" type="radio" name="brand" value="">
+                            <label for="brand3">New Balance</label>
+                            <input id="brand4" type="radio" name="brand" value="">
+                            <label for="brand4">River Island</label>
+                        </div>
+                    </div>
+                    <div class="wrap-radio">
+                        <h3>Size</h3>
+                        <div class="radios">
+                            <input id="size1" type="radio" name="size" value="" checked>
+                            <label for="size1">Not selected</label>
+                            <input id="size2" type="radio" name="size" value="">
+                            <label for="size2">UK 2</label>
+                            <input id="size3" type="radio" name="size" value="">
+                            <label for="size3">UK 18</label>
+                            <input id="size4" type="radio" name="size" value="">
+                            <label for="size4">UK 20</label>
+                        </div>
+                    </div>
+                    <div class="wrap-radio">
+                        <h3>Price range</h3>
+                        <div class="radios">
+                            <input id="price1" type="radio" name="price" value="" checked>
+                            <label for="price1">Not selected</label>
+                            <input id="price2" type="radio" name="price" value="">
+                            <label for="price2">To £99</label>
+                            <input id="price3" type="radio" name="price" value="">
+                            <label for="price3">£100-£299</label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hr"></div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="catalog-fst">
+                <a href="item.html" class="item">
+                    <div class="item__img">
+                        <img src="img/catalog/good5.png" alt="t-short">
+                        <span class="stick-new">NEW</span>
+                    </div>
+                    <p class="item__name">Only Skinny Jeans</p>
+                    <div class="item__price">
+                        <div class="item-price__old"><span></span> £120.00</div>
+                        <div class="item-price__new">£76.25</div>
+                    </div>
+                </a>
+                <a href="item.html" class="item">
+                    <div class="item__img">
+                        <img src="img/catalog/good6.png" alt="t-short">
+                    </div>
+                    <p class="item__name">Neck Knitted Jumper</p>
+                    <div class="item__price">
+
+                        <div class="item-price__new">£76.25</div>
+                    </div>
+                </a>
+                <a href="item.html" class="item">
+                    <div class="item__img">
+                        <img src="img/catalog/good7.png" alt="t-short">
+                        <span class="stick-new">NEW</span>
+                    </div>
+                    <p class="item__name">Turtle Neck Jumper in Rib</p>
+                    <div class="item__price">
+
+                        <div class="item-price__new">£76.25</div>
+                    </div>
+                </a>
+                <a href="item.html" class="item">
+                    <div class="item__img">
+                        <img src="img/catalog/good8.png" alt="t-short">
+
+                    </div>
+                    <p class="item__name">With Patchwork Crochet</p>
+                    <div class="item__price">
+                        <div class="item-price__old"><span></span> £120.00</div>
+                        <div class="item-price__new">£76.25</div>
+                    </div>
+                </a>
+                <a href="item.html" class="item">
+                    <div class="item__img">
+                        <img src="img/catalog/good9.png" alt="t-short">
+                        <span class="stick-new">NEW</span>
+                    </div>
+
+                    <p class="item__name">Only Skinny Jeans</p>
+                    <div class="item__price">
+
+                        <div class="item-price__new">£76.25</div>
+                    </div>
+                </a>
+                <a href="item.html" class="item">
+                    <div class="item__img">
+                        <img src="img/catalog/good10.png" alt="t-short">
+                    </div>
+                    <p class="item__name">Neck Knitted Jumper</p>
+                    <div class="item__price">
+                        <div class="item-price__old"><span></span> £120.00</div>
+                        <div class="item-price__new">£76.25</div>
+                    </div>
+                </a>
+                <a href="item.html" class="item">
+                    <div class="item__img">
+                        <img src="img/catalog/good11.png" alt="t-short">
+
+                    </div>
+                    <p class="item__name">Turtle Neck Jumper in Rib</p>
+                    <div class="item__price">
+
+                        <div class="item-price__new">£76.25</div>
+                    </div>
+                </a>
+                <a href="item.html" class="item">
+                    <div class="item__img">
+                        <img src="img/best-offer-ts.png" alt="t-short">
+                        <span class="stick-new">NEW</span>
+                    </div>
+                    <p class="item__name">With Patchwork Crochet</p>
+                    <div class="item__price">
+
+                        <div class="item-price__new">£76.25</div>
+                    </div>
+                </a>
+            </section>
+            <button class="show-more">Show more</button>
+            <!-- <section class="sale-adv">
+                <h3>Last weekend <span>extra 50%</span> off on all reduced boots and shoulder bags</h3>
+                <p>This offer is valid in-store and online. Prices displayed reflect this additional discount. This
+                    offer ends at 11:59 GMT on March 1st 2019</p>
+            </section> -->
+            <!-- <section class="catalog-snd">
+            </section> -->
+        </div>
+        <div class="hr"></div>
+        <section class="banners-items">
+            <div class="banners-items__left banners-items-left">
+                <img src="img/item/banner-left.png" alt="banner-left">
+                <div class="banners-items-left__desc">
+                    <h3>Adidas Blue</h3>
+                    <p>For men</p>
+                </div>
+            </div>
+            <div class="banners-items__right">
+                <img src="img/item/banner-right1.png" alt="banner-right1">
+                <div class="banners-items-right__desc">
+                    <h3>Repair Patches</h3>
+                    <p>For men</p>
+                </div>
+                <img src="img/item/banner-right2.png" alt="banner-right2">
+                <div class="banners-items-right__desc">
+                    <h3>Sale</h3>
+                    <p>70%</p>
+                </div>
+            </div>
+        </section>
+        <div class="hr"></div>
+    </main>
+    <footer>
+        <div class="nav-about">
+            <nav class="navigate">
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <ul class="quick-links">
+                        <li class="link__item"><a href="">Store locator</a></li>
+                        <li class="link__item"><a href="">Gift cards</a></li>
+                        <li class="link__item"><a href="">Size guide</a></li>
+                        <li class="link__item"><a href="">About us</a></li>
+                        <li class="link__item"><a href="">Support</a></li>
+                    </ul>
+                </div>
+                <div class="customer-care">
+                    <h3>Customer Care</h3>
+                    <ul>
+                        <li class="link__item"><a href="">Customer service</a></li>
+                        <li class="link__item"><a href="">Track my order</a></li>
+                        <li class="link__item"><a href="">Return policy</a></li>
+                        <li class="link__item"><a href="">Shipping & delivery</a></li>
+                        <li class="link__item"><a href="">Careers</a></li>
+                        <li class="link__item"><a href="">Contact us</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="about">
+                <div class="quest-phone">
+                    <div class="questions">
+                        <h3>Questions</h3>
+                        <img src="img/twi_ico.png" alt="twitter-ico">
+                        <span>Tweet us <span>@template</span></span>
+                    </div>
+                    <div class="phone">
+                        <h3>Order by phone</h3>
+                        <a href="tel:+8-800-409-47-12">8-800-409-47-12</a>
+                    </div>
+                </div>
+                <p class="delivery">
+                    We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5
+                    days.
+                </p>
+                <div class="socials">
+                    <a href="facebook.com" class="fb"><img src="img/fb.png" alt="facebook"></a>
+                    <a href="twitter.com" class="tw"><img src="img/twi.png" alt="twitter"></a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="hr"></div>
+        <div class="container">
+            <div class="rights">
+                <p>© 2010–2015, The Template Group inc.</p>
+                <a href="#" class="share">Share<span>1 437</span></a>
+                <ul class="notes">
+                    <li><a href="">Legal notice</a></li>
+                    <li><a href="">Privacy policy</a></li>
+                    <li><a href="">Site map</a></li>
+                </ul>
+                <div class="socials">
+                    <a href="facebook.com" class="fb"><img src="img/fb.png" alt="facebook"></a>
+                    <a href="twitter.com" class="tw"><img src="img/twi.png" alt="twitter"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="data/catalog.js"></script>
+    <script src="js/ctlg.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
