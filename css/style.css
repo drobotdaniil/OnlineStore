@@ -405,6 +405,7 @@ header .banners-items__right img {
   background: #f14a58;
   transform: rotate(-31deg) translate(-32%, -50%);
   top: -14%;
+  left: 30%;
 }
 .total-block {
   width: 100%;

@@ -1,43 +1,55 @@
 const goodDiv = document.querySelector('#good');
-const showItem = () => {
-    let out = '';
-    out += `<div class="good__preview">
-                <div class="full-img">
-                    <img src="${item.preview[0]}" alt="${item.title}">
-                </div>
-                <div class="small-img">
-                    <img src="${item.preview[0]}" alt="${item.title}">
-                    <img src="${item.preview[1]}" alt="${item.title}">
-                    <img src="${item.preview[2]}" alt="${item.title}">
-                </div>
-            </div>
-            <div class="good__info good-info">
-                <h2 class="good-info__title">${item.title}</h2>
-                <p class="good-info__desc">${item.description}</p>
-                <p class="good-info__price">£${(item.discountedPrice).toFixed(2)}</p>
-                <div class="good-info__size">
-                    <span>Size:</span>
-                    <input id="size1" type="radio" name="size" value="52">
-                    <label for="size1">${item.sizes[0]}</label>
-                    <input id="size2" type="radio" name="size" value="54">
-                    <label for="size2">${item.sizes[1]}</label>
-                    <input id="size3" type="radio" name="size" value="56">
-                    <label for="size3">${item.sizes[2]}</label>
-                </div>
-                <div class="good-info__color">
-                    <span>Color:</span>
-                    <input id="color1" type="radio" name="color" value="black">
-                    <label for="color1">${item.colors[0]}</label>
-                    <input id="color2" type="radio" name="color" value="blue">
-                    <label for="color2">${item.colors[0]}</label>
-                </div>
-                <button class="good-info__btn" id="add-to-bag" data-action="${item.id}">Add to bag</button>
-            </div>`;
-    goodDiv.innerHTML = out;
+let test = localStorage.getItem('good');
+let out = '';
+for (let key in catalog) {
+    if (catalog[key].id == test) {
+        out += `<div class="good__preview">
+        <div class="full-img">
+            <img src="${catalog[key].preview[0]}" alt="${catalog[key].title}" id="full-img">
+        </div>
+        <div class="small-img" id="small-img">
+            <img src="${catalog[key].preview[0]}" alt="${catalog[key].title}" data-first>
+            <img src="${catalog[key].preview[1]}" alt="${catalog[key].title}" data-second>
+            <img src="${catalog[key].preview[2]}" alt="${catalog[key].title}" data-third>
+        </div>
+        </div>
+        <div class="good__info good-info">
+        <h2 class="good-info__title">${catalog[key].title}</h2>
+        <p class="good-info__desc">${catalog[key].description}</p>`;
+        if (catalog[key].discountedPrice != null) {
+            out += `<p class="good-info__price">£${(catalog[key].discountedPrice).toFixed(2)}</p>`;
+        } else {
+            out += `<p class="good-info__price">£${(catalog[key].price).toFixed(2)}</p>`;
+        }
+        if (catalog[key].sizes.length !== 0) {
+            out += `<div class="good-info__size">
+            <span>Size:</span>`;
+            for (let i = 0; i < catalog[key].sizes.length; i++) {
+                out += `<input id="size${i}" type="radio" name="size" value="${catalog[key].sizes[i]}">
+                        <label for="size${i}">${catalog[key].sizes[i]}</label>`;
+            }
+            out += `</div>`;
+        }
+        if (catalog[key].colors.length !== 0) {
+            out += ` <div class="good-info__color">
+            <span>Color:</span>`;
+            for (let i = 0; i < catalog[key].colors.length; i++) {
+                out += `<input id="color${i}" type="radio" name="color" value="${catalog[key].colors[i]}">
+                        <label for="color${i}">${catalog[key].colors[i]}</label>`;
+            }
+            out += `</div>`;
+        }
+        out += `
+        <button class="good-info__btn" id="add-to-bag" data-action="${catalog[key].id}">Add to bag</button>
+    </div > `;
+    }
 }
-showItem();
+goodDiv.innerHTML = out;
 
 const btnAddTo = document.querySelector('#add-to-bag');
+const smallImgDiv = document.querySelector('#small-img');
+
+// console.log(fullImg)
 btnAddTo.addEventListener('click', function (e) {
     let item = e.target.dataset.action;
     if (basket[item] != undefined) {
@@ -46,5 +58,8 @@ btnAddTo.addEventListener('click', function (e) {
         basket[item] = 1;
     }
     localStorage.setItem('basket', JSON.stringify(basket));
-    showBasketCounts()
+    showBasketCounts();
+});
+smallImgDiv.addEventListener('click', function (e) {
+    document.getElementById("full-img").src = e.target.src;
 });

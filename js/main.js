@@ -6,26 +6,12 @@ const cartCounter = document.querySelector('#cart-counter');
 const cartPrice = document.querySelector('#cart-price');
 
 let basket = {};
-const item = {
-    id: '80d32566-d81c-4ba0-9edf-0eceda3b4360',
-    dateAdded: '2017-01-01T13:26:14.000Z',
-    title: 'Dark classic fit suit',
-    description: 'Featuring fine Italian wool, this elegant suit has pick-stitch edging, cascade buttons at the cuffs',
-    discountedPrice: 180.6,
-    price: 180.6,
-    hasNew: false,
-    category: 'men',
-    fashion: 'Classical style',
-    colors: ['Black', 'Blue'],
-    sizes: ['UK 52', 'UK 54', 'UK 56'],
-    thumbnail: 'img/photo/man-suit.jpg', // replace with image extracted from item layout
-    preview: ['img/item/full.png', 'img/item/small-img.png', 'img/item/small2.png'] // replace with paths to images extracted from item layout
-};
+
 burger.addEventListener('click', function () {
-    if(burgerImg.classList.contains('hidden')){
+    if (burgerImg.classList.contains('hidden')) {
         burgerSpan.classList.add('hidden');
         burgerImg.classList.remove('hidden');
-    } else{
+    } else {
         burgerSpan.classList.remove('hidden');
         burgerImg.classList.add('hidden');
     }
@@ -37,16 +23,26 @@ function checkBasket() {
     }
 }
 function showBasketCounts() {
+    let counts = 0;
     let sum = 0;
-    for (let key in basket) {
-        sum += basket[key];
+    for (let item in basket) {
+        counts += basket[item];
+        for (let key in catalog) {
+            if (item === catalog[key].id) {
+                if (catalog[key].discountedPrice != null) {
+                    sum += basket[item] * catalog[key].discountedPrice;
+                } else {
+                    sum += basket[item] * (catalog[key].price);
+                }
+            }
+        }
     }
-    cartCounter.innerHTML = sum;
     if (Object.keys(basket).length != 0) {
-        cartPrice.innerHTML = "£" + (sum * item.discountedPrice).toFixed(2);
+        cartPrice.innerHTML = "£" + sum.toFixed(2);
     } else {
         cartPrice.innerHTML = "";
     }
+    cartCounter.innerHTML = counts;
 }
 checkBasket()
 showBasketCounts()

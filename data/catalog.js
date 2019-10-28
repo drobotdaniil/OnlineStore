@@ -3,15 +3,15 @@ window.catalog = [{
     dateAdded: '2017-05-15T16:58:40.000Z',
     title: 'Monki Festival Knitted',
     description: '',
-    discountedPrice: 24.75,
+    discountedPrice: 21.75,
     price: 24.75,
     hasNew: false,
     category: 'women',
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/catalog/good5.png', // replace with path to image extracted from catalog layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    thumbnail: 'img/photo/thumb1.jpg', // replace with path to image extracted from catalog layout
+    preview: ['img/photo/full1.jpg', 'img/photo/full2.jpg', 'img/photo/full3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '07cf6ce2-6eee-4e78-a441-f257fdea7ed6',
     dateAdded: '2017-06-12T15:35:13.000Z',
@@ -24,8 +24,22 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: ['Black', 'White'],
     sizes: ['UK 18'],
-    thumbnail: 'img/catalog/good6.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    thumbnail: 'img/photo/thumb2.jpg', // replace with image extracted from item layout
+    preview: ['img/photo/full_2-1.jpg', 'img/photo/full_2-2.jpg', 'img/photo/full_2-3.jpg'] // replace with paths to images extracted from item layout
+}, {
+    id: '07cf6ce2-6eee-4e78-a441-f257fd',
+    dateAdded: '2017-06-12T15:35:13.000Z',
+    title: 'Nike Red',
+    description: 'Nice shoes',
+    discountedPrice: 100,
+    price: 100,
+    hasNew: true,
+    category: 'women',
+    fashion: 'Casual style',
+    colors: ['Red'],
+    sizes: ['UK 9.5'],
+    thumbnail: 'img/photo/nike.jpg', // replace with image extracted from item layout
+    preview: ['img/photo/nike1.jpg', 'img/photo/nike2.jpg', 'img/photo/nike3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '0fdfa061-838d-42ab-ae06-99c66115f633',
     dateAdded: '2017-02-12T11:14:29.000Z',
@@ -38,8 +52,8 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/catalog/good7.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    thumbnail: 'img/photo/thumb3.jpg', // replace with image extracted from item layout
+    preview: ['img/photo/full_3-1.jpg', 'img/photo/full_3-2.jpg', 'img/photo/full_3-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '4a3d3c3e-9dc5-4d99-b33d-42b22e20dc0b',
     dateAdded: '2017-08-02T15:00:40.000Z',
@@ -52,8 +66,8 @@ window.catalog = [{
     fashion: 'Nail the 90s',
     colors: ['Blue'],
     sizes: ['UK 18'],
-    thumbnail: 'img/catalog/good8.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    thumbnail: 'img/photo/thumb4.jpg', // replace with image extracted from item layout
+    preview: ['img/photo/full_4-1.jpg', 'img/photo/full_4-2.jpg', 'img/photo/full_4-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '5677f851-1c4a-4e9b-80e9-16d1e6265257',
     dateAdded: '2017-07-07T10:00:39.000Z',
@@ -66,8 +80,8 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: ['Blue'],
     sizes: ['UK 18'],
-    thumbnail: 'img/catalog/good9.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    thumbnail: 'img/photo/thumb5.jpg', // replace with image extracted from item layout
+    preview: ['img/photo/full_5-1.jpg', 'img/photo/full_5-2.jpg', 'img/photo/full_5-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '739d3ae0-6dca-4453-a7a4-a94b841a296d',
     dateAdded: '2017-07-12T09:02:55.000Z',
@@ -80,8 +94,8 @@ window.catalog = [{
     fashion: 'Casual style',
     colors: [],
     sizes: [],
-    thumbnail: 'img/catalog/good10.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    thumbnail: 'img/photo/thumb7.jpeg', // replace with image extracted from item layout
+    preview: ['img/photo/full_7-1.jpg', 'img/photo/full_7-2.jpg', 'img/photo/full_7-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '80d32566-d81c-4ba0-9edf-0eceda3b4360',
     dateAdded: '2017-01-01T13:26:14.000Z',
@@ -94,7 +108,7 @@ window.catalog = [{
     fashion: 'Classical style',
     colors: ['Black', 'Blue'],
     sizes: ['UK 52', 'UK 54', 'UK 56'],
-    thumbnail: 'img/catalog/good11.png', // replace with image extracted from item layout
+    thumbnail: 'img/photo/man-suit.jpg', // replace with image extracted from item layout
     preview: ['img/item/full.png', 'img/item/small-img.png', 'img/item/small2.png'] // replace with paths to images extracted from item layout
 }, {
     id: '8b300772-eee3-4ff1-b091-e89f17e0e469',
@@ -109,7 +123,7 @@ window.catalog = [{
     colors: ['Green'],
     sizes: ['UK 19'],
     thumbnail: 'img/catalog/good10.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    preview: ['img/photo/full_7-1.jpg', 'img/photo/full_7-2.jpg', 'img/photo/full_7-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '8c061815-6a7d-4465-bb78-1bdc6c5adebf',
     dateAdded: '2017-08-28T09:15:36.000Z',
@@ -123,7 +137,7 @@ window.catalog = [{
     colors: ['Phillipa wash'],
     sizes: ['UK 17'],
     thumbnail: 'img/catalog/good9.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    preview: ['img/photo/full_5-1.jpg', 'img/photo/full_5-2.jpg', 'img/photo/full_5-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: '9ded7821-e510-4a16-ba9f-57c1e3442ad8',
     dateAdded: '2017-07-19T15:11:04.000Z',
@@ -137,7 +151,7 @@ window.catalog = [{
     colors: [],
     sizes: [],
     thumbnail: 'img/catalog/good8.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    preview: ['img/photo/full_4-1.jpg', 'img/photo/full_4-2.jpg', 'img/photo/full_4-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: 'bec71daa-d133-473d-bbb0-1ee0a427a17d',
     dateAdded: '2017-03-09T17:51:45.000Z',
@@ -151,7 +165,7 @@ window.catalog = [{
     colors: ['Dark Blue'],
     sizes: ['UK 19'],
     thumbnail: 'img/catalog/good7.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    preview: ['img/photo/full_3-1.jpg', 'img/photo/full_3-2.jpg', 'img/photo/full_3-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: 'ccc8a5d5-7cdf-4706-95f2-abc64761400d',
     dateAdded: '2017-06-09T17:32:17.000Z',
@@ -165,7 +179,7 @@ window.catalog = [{
     colors: [],
     sizes: [],
     thumbnail: 'img/catalog/good6.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    preview: ['img/photo/full_2-1.jpg', 'img/photo/full_2-2.jpg', 'img/photo/full_2-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: 'e50a3153-7833-4b85-b412-1a39d215fd38',
     dateAdded: '2017-04-25T12:14:41.000Z',
@@ -179,7 +193,7 @@ window.catalog = [{
     colors: ['Raw umber', 'Dark blue'],
     sizes: ['UK 18', 'UK 19'],
     thumbnail: 'img/catalog/good5.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    preview: ['img/photo/full_1-1.jpg', 'img/photo/full_1-2.jpg', 'img/photo/full_1-3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: 'ff665110-5e7f-435d-b1b4-651c3d5050ca',
     dateAdded: '2017-04-05T10:04:16.000Z',
@@ -193,5 +207,5 @@ window.catalog = [{
     colors: ['Blue'],
     sizes: ['UK 18'],
     thumbnail: 'img/catalog/good6.png', // replace with image extracted from item layout
-    preview: ['full image path 1', 'full image path 2', 'full image path 3'] // replace with paths to images extracted from item layout
+    preview: ['img/photo/full_2-1.jpg', 'img/photo/full_2-2.jpg', 'img/photo/full_2-3.jpg'] // replace with paths to images extracted from item layout
 }];

@@ -33,6 +33,7 @@ main {
 }
 .small-img {
   flex-direction: row;
+  cursor: pointer;
 }
 .full-img img,
 .small-img img {
@@ -40,7 +41,7 @@ main {
   display: block;
 }
 .small-img img {
-  width: 33.3%;
+  width: 33.33%;
 }
 .good-info {
   padding-top: 50px;
@@ -202,6 +203,9 @@ input[type="radio"]:checked + label {
   .good-info__btn {
     width: 260px;
     height: 70px;
+  }
+  .good-info__desc {
+    margin: 0 0 50px 0;
   }
   /* .banners-items__left {
     width: 70%;
