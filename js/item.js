@@ -8,9 +8,9 @@ for (let key in catalog) {
             <img src="${catalog[key].preview[0]}" alt="${catalog[key].title}" id="full-img">
         </div>
         <div class="small-img" id="small-img">
-            <img src="${catalog[key].preview[0]}" alt="${catalog[key].title}" data-first>
-            <img src="${catalog[key].preview[1]}" alt="${catalog[key].title}" data-second>
-            <img src="${catalog[key].preview[2]}" alt="${catalog[key].title}" data-third>
+            <div class="dark"><img src="${catalog[key].preview[0]}" alt="${catalog[key].title}" data-first></div>
+            <div><img src="${catalog[key].preview[1]}" alt="${catalog[key].title}" data-second></div>
+            <div><img src="${catalog[key].preview[2]}" alt="${catalog[key].title}" data-third></div>
         </div>
         </div>
         <div class="good__info good-info">
@@ -60,6 +60,24 @@ btnAddTo.addEventListener('click', function (e) {
     localStorage.setItem('basket', JSON.stringify(basket));
     showBasketCounts();
 });
+// let selected;
 smallImgDiv.addEventListener('click', function (e) {
-    document.getElementById("full-img").src = e.target.src;
+    smallImgDiv.querySelector('.dark').classList.remove('dark');
+    if (e.target.querySelector('img')) {
+        document.getElementById("full-img").src = e.target.querySelector('img').src;
+    } else {
+        document.getElementById("full-img").src = e.target.src;
+    }
+    let activeElem = e.target.closest('div');
+    
+    if(activeElem){
+        activeElem.classList.add('dark');
+    }
 });
+// function dark(item){
+//     if(selected){
+//         selected.classList.remove('dark');
+//     }
+//     selected = item;
+//     selected.classList.add('dark');
+// }

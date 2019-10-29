@@ -95,7 +95,7 @@ window.catalog = [{
     colors: [],
     sizes: [],
     thumbnail: 'img/photo/thumb7.jpeg', // replace with image extracted from item layout
-    preview: ['img/photo/full_7-1.jpg', 'img/photo/full_7-2.jpg', 'img/photo/full_7-3.jpg'] // replace with paths to images extracted from item layout
+    preview: ['img/photo/full_7-1.jpeg', 'img/photo/full_7-2.jpeg', 'img/photo/full_7-3.jpeg'] // replace with paths to images extracted from item layout
 }, {
     id: '80d32566-d81c-4ba0-9edf-0eceda3b4360',
     dateAdded: '2017-01-01T13:26:14.000Z',
@@ -123,7 +123,7 @@ window.catalog = [{
     colors: ['Green'],
     sizes: ['UK 19'],
     thumbnail: 'img/catalog/good10.png', // replace with image extracted from item layout
-    preview: ['img/photo/full_7-1.jpg', 'img/photo/full_7-2.jpg', 'img/photo/full_7-3.jpg'] // replace with paths to images extracted from item layout
+    preview: ['img/photo/full_7-1.jpeg', 'img/photo/full_7-2.jpeg', 'img/photo/full_7-3.jpeg'] // replace with paths to images extracted from item layout
 }, {
     id: '8c061815-6a7d-4465-bb78-1bdc6c5adebf',
     dateAdded: '2017-08-28T09:15:36.000Z',
@@ -193,7 +193,7 @@ window.catalog = [{
     colors: ['Raw umber', 'Dark blue'],
     sizes: ['UK 18', 'UK 19'],
     thumbnail: 'img/catalog/good5.png', // replace with image extracted from item layout
-    preview: ['img/photo/full_1-1.jpg', 'img/photo/full_1-2.jpg', 'img/photo/full_1-3.jpg'] // replace with paths to images extracted from item layout
+    preview: ['img/photo/full1.jpg', 'img/photo/full2.jpg', 'img/photo/full3.jpg'] // replace with paths to images extracted from item layout
 }, {
     id: 'ff665110-5e7f-435d-b1b4-651c3d5050ca',
     dateAdded: '2017-04-05T10:04:16.000Z',
