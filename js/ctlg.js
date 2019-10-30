@@ -110,12 +110,12 @@ function showFiltersBarTitles() {
     return testArr;
 }
 function showSaleAdv() {
-    if (screen.width >= 1024) {
+    if (window.innerWidth >= 1024) {
         laptopDiv.style.display = "none";
         mobileDiv.style.display = "none";
         desctopDiv.style.display = "block";
         desctopDiv.innerHTML = saleDiv;
-    } else if (screen.width >= 768 && screen.width <= 1024) {
+    } else if (window.innerWidth >= 768 && window.innerWidth <= 1024) {
         desctopDiv.style.display = "none";
         mobileDiv.style.display = "none";
         laptopDiv.style.display = "block";

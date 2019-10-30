@@ -163,25 +163,29 @@ select:focus > option:checked {
 .filters-bar {
   /* font-size: 13px;
   font-weight: 700; */
-  padding: 21px 30px 2px 30px;
+  padding: 21px 30px 21px 30px;
   position: relative;
   cursor: pointer;
-  
+
   /* width: 310.1px; */
 }
-.filters-bar h3{
+/* .filters-bar h3::-moz-scrollbar {
+  width: 0px;
+  height: 0px;
+} */
+.filters-bar h3 {
   font-size: 13px;
   font-weight: 700;
   white-space: nowrap;
-  overflow-x: scroll;
+  overflow: hidden;
   padding-right: 30px;
-  line-height: 117%;
-  -ms-overflow-style: none;
+  /* line-height: 117%; */
+  /* -ms-overflow-style: none; */
 }
-.active-filter{
+.active-filter {
   color: #f14a58;
 }
-.filters-bar h3::-webkit-scrollbar { width: 0; }
+/* .filters-bar h3::-webkit-scrollbar { width: 0; } */
 
 .filters-bar + .hr {
   display: none;
@@ -207,7 +211,7 @@ select:focus > option:checked {
 .visible {
   display: flex !important;
 }
-.hidden{
+.hidden {
   display: none;
 }
 /* .visibility{
@@ -318,13 +322,13 @@ select:focus > option:checked {
     margin-bottom: 30px;
   } */
   .filters-bar {
-    padding: 25px 50px 7px 50px;
+    padding: 25px 50px 25px 50px;
   }
   .btn-open,
   .filters-bar img {
     top: 19px;
   }
-  .filters-bar h3{
+  .filters-bar h3 {
     font-size: 14px;
   }
   .filters__item {
@@ -360,7 +364,7 @@ select:focus > option:checked {
   .filters {
     display: flex;
   }
-  
+
   .filters-bar {
     display: none;
   }
