@@ -4,7 +4,7 @@
   margin: 0;
 }
 body {
-  max-width: 1300px;
+  /* max-width: 1300px; */
   /* background: silver; */
   color: #000000;
   margin: 0 auto;
@@ -44,7 +44,8 @@ header a:hover {
 }
 .container {
   padding: 0 20px;
-  /* margin: 0 auto; */
+  margin: 0 auto;
+  max-width: 1300px;
 }
 .head {
   display: flex;
@@ -176,6 +177,7 @@ header a:hover {
 /* section banners-items */
 .banners-items {
   display: flex;
+  margin: 0 -20px;
 }
 .banners-items__left,
 .banners-items__right {
@@ -233,6 +235,7 @@ header a:hover {
   color: #ffffff;
 }
 /* styles for start page banners */
+
 header .banners-items-left__desc h3,
 header .banners-items .banners-items-right__desc h3 {
   color: #000000;
@@ -257,6 +260,9 @@ header .banners-items__right img {
 /* main */
 .hr {
   border-bottom: 1px solid #e5e5e5;
+  position: relative;
+  max-width: 1380px;
+  margin: 0 auto;
 }
 /* best offer */
 .best-offer {
@@ -290,9 +296,6 @@ header .banners-items__right img {
   align-items: center;
   user-select: none;
   cursor: pointer;
-
-  /* -ms-user-select: none; */
-  /* position: relative; */
   width: 48%;
   max-width: 260px;
 }
@@ -340,8 +343,6 @@ header .banners-items__right img {
 }
 .item__img {
   position: relative;
-  /* 
-   */
   margin: 0 2px;
 }
 .item:hover .item__name {
@@ -350,7 +351,6 @@ header .banners-items__right img {
 .item:hover .item__img::before {
   content: "";
   width: 100%;
-  /* margin-left: 5px; */
   height: 99.5%;
   z-index: 99;
   position: absolute;
@@ -369,11 +369,6 @@ header .banners-items__right img {
   transform: translate(-50%, -50%);
 }
 .item__img img {
-  /* max-width: 204px;
-  width: 100%;
-  padding: 0 5px; */
-
-  /*  */
   width: 100%;
   max-width: 240px;
 }
@@ -391,7 +386,6 @@ header .banners-items__right img {
   margin-top: 20px;
   font-weight: 400;
   display: flex;
-  /* position: relative; */
 }
 .item-price__old {
   color: #757575;
@@ -496,7 +490,7 @@ footer .container {
 .navigate,
 .about {
   display: flex;
-  padding-left: 20px;
+
   width: 100%;
   border-right: none;
 }
@@ -505,6 +499,7 @@ footer .container {
 }
 .about {
   border-right: none;
+  padding-left: 20px;
   flex-direction: column;
   width: 100%;
   padding-left: 0;
@@ -524,6 +519,7 @@ footer h3 {
 .quick-links,
 .customer-care {
   width: 50%;
+  padding-left: 20px;
 }
 .customer-care {
   padding-bottom: 62px;
@@ -700,13 +696,6 @@ footer h3 {
     margin-top: 10px;
     margin-bottom: 0;
   }
-  /* .left,
-  .right {
-    width: 100%;
-  }
-  .right {
-    display: block;
-  } */
   .banners-items__left {
     width: 70%;
   }
@@ -729,8 +718,12 @@ footer h3 {
     line-height: 30px;
   }
   /* banners styles for start page */
+  .banners-items {
+    margin: 0 -40px;
+  }
   header .banners-items__left {
     width: 50%;
+    border-right: 1px solid #e5e5e5;
   }
   header .banners-items__right img:last-of-type {
     display: block;
@@ -828,7 +821,7 @@ footer h3 {
     width: 300px;
   }
   footer .container {
-    padding: 0 20px;
+    padding: 0 40px;
   }
   footer h3 {
     padding-top: 53px;
@@ -846,8 +839,12 @@ footer h3 {
   }
   .navigate {
     width: 66.6%;
-    padding-left: 40px;
+    /* padding-left: 40px; */
     border-bottom: none;
+  }
+  .quick-links,
+  .customer-care {
+    padding-left: 0;
   }
   .customer-care {
     padding-bottom: 62px;
@@ -948,7 +945,9 @@ footer h3 {
   header .banners-items .banners-items-right__desc h3 {
     font-size: 28px;
   }
-
+  .banners-items {
+    margin: 0 -60px;
+  }
   .banners-items-left__desc p,
   .banners-items-right__desc p {
     font-size: 16px;
@@ -1016,6 +1015,9 @@ footer h3 {
     padding: 24px 0;
     font-size: 24px;
   }
+  footer .container {
+    padding: 0 60px;
+  }
   footer h3 {
     padding-top: 58px;
     margin-bottom: 50px;
@@ -1028,7 +1030,7 @@ footer h3 {
   .navigate {
     border-right: 1px solid #e5e5e5;
     width: 50%;
-    padding-left: 60px;
+    /* padding-left: 60px; */
   }
   .link__item {
     margin-bottom: 30px;
@@ -1058,5 +1060,23 @@ footer h3 {
   }
   .notes li {
     margin-right: 35px;
+  }
+}
+@media (min-width: 1300px) {
+  .hr::before,
+  .hr::after {
+    position: absolute;
+    background: linear-gradient(to left, #e5e5e5, #ffffff);
+    content: "";
+
+    left: 0;
+    width: 100%;
+    max-width: 40px;
+    height: 1px;
+  }
+  .hr::after {
+    left: auto;
+    right: 0;
+    background: linear-gradient(to right, #e5e5e5, #ffffff);
   }
 }
