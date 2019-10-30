@@ -55,17 +55,17 @@
         <div class="hr"></div>
 
         <div class="filters-bar" id="filters-bar">
-            Casual style, Product type, Color, Antipodium, UK 18, Price range
-            <img src="img/ico_close.png" alt="close" class="hidden btn-x">
+            <h3>Fashion, Product type, Color, Brand, Size, Price range</h3>
+            <img src="img/ico_close.png" alt="close" class="hidden" id="btn-close">
+            <span id="btn-open"class="btn-open">&lsaquo;</span>
         </div>
         <div class="hr"></div>
-
         <div class="container">
-            <div class="filters">
+            <div class="filters" id="filters">
                 <div class="filters__item filters-item" current>
                     <h3 class="filters-item__title">Fashion</h3>
                     <h3 class="filters-item__selected"></h3>
-                    <div class="filters-item__radio">
+                    <div class="filters-item__radio" title="Fashion">
                         <input id="fashion1" type="radio" name="fashion" value="Not selected" checked>
                         <label for="fashion1">Not selected</label>
                         <input id="fashion2" type="radio" name="fashion" value="Nail the 90s">
@@ -85,7 +85,7 @@
                 <div class="filters__item" current>
                     <h3 class="filters-item__title">Product type</h3>
                     <h3 class="filters-item__selected"></h3>
-                    <div class="filters-item__radio">
+                    <div class="filters-item__radio" title="Product type">
                         <input id="product1" type="radio" name="product" value="Not selected" checked>
                         <label for="product1">Not selected</label>
                         <input id="product2" type="radio" name="product" value="Coats & Jackets">
@@ -99,7 +99,7 @@
                 <div class="filters__item" current>
                     <h3 class="filters-item__title">Color</h3>
                     <h3 class="filters-item__selected"></h3>
-                    <div class="filters-item__radio">
+                    <div class="filters-item__radio" title="Color">
                         <input id="color1" type="radio" name="color" value="Not selected" checked>
                         <label for="color1">Not selected</label>
                         <input id="color2" type="radio" name="color" value="Black">
@@ -117,7 +117,7 @@
                 <div class="filters__item" current>
                     <h3 class="filters-item__title">Brand</h3>
                     <h3 class="filters-item__selected"></h3>
-                    <div class="filters-item__radio">
+                    <div class="filters-item__radio" title="Brand">
                         <input id="brand1" type="radio" name="brand" value="Not selected" checked>
                         <label for="brand1">Not selected</label>
                         <input id="brand2" type="radio" name="brand" value="Adidas">
@@ -135,7 +135,7 @@
                 <div class="filters__item" current>
                     <h3 class="filters-item__title">Size</h3>
                     <h3 class="filters-item__selected"></h3>
-                    <div class="filters-item__radio">
+                    <div class="filters-item__radio" title="Size">
                         <input id="size1" type="radio" name="size" value="Not selected" checked>
                         <label for="size1">Not selected</label>
                         <input id="size2" type="radio" name="size" value="UK 2">
@@ -159,7 +159,7 @@
                 <div class="filters__item" current>
                     <h3 class="filters-item__title">Price range</h3>
                     <h3 class="filters-item__selected"></h3>
-                    <div class="filters-item__radio">
+                    <div class="filters-item__radio" title="Price range">
                         <input id="price1" type="radio" name="price" value="Not selected" checked>
                         <label for="price1">Not selected</label>
                         <input id="price2" type="radio" name="price" value="To £99">
