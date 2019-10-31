@@ -106,5 +106,3 @@ buyBtn.addEventListener('click', function () {
     basketDiv.innerHTML = '<div class="empty-info">Thank you for your purchase</div>';
     window.scrollTo(pageXOffset, 0);
 });
-// checkBasket();
-// showBasket();

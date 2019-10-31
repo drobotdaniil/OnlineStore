@@ -4,7 +4,9 @@ const burgerImg = document.querySelector('.burger img');
 const menu = document.querySelector('.menu');
 const cartCounter = document.querySelector('#cart-counter');
 const cartPrice = document.querySelector('#cart-price');
-
+const searchIco = document.querySelector('#search-ico');
+const searchInput = document.querySelector('#search');
+const searchLabel = document.querySelector('#search-label');
 let basket = {};
 
 burger.addEventListener('click', function () {
@@ -16,6 +18,10 @@ burger.addEventListener('click', function () {
         burgerImg.classList.add('hidden');
     }
     menu.classList.toggle('visible');
+});
+searchIco.addEventListener('click', function(){
+    searchInput.classList.toggle('hidden-search-input');
+    searchLabel.classList.toggle('hidden-search-label');
 });
 function checkBasket() {
     if (localStorage.getItem('basket') != null) {
@@ -46,3 +52,13 @@ function showBasketCounts() {
 }
 checkBasket()
 showBasketCounts()
+
+// (function (ELEMENT) {
+//     ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
+//     ELEMENT.closest = ELEMENT.closest || function closest(selector) {
+//         if (!this) return null;
+//         if (this.matches(selector)) return this;
+//         if (!this.parentElement) { return null }
+//         else return this.parentElement.closest(selector)
+//     };
+// }(Element.prototype));

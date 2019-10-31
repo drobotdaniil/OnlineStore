@@ -1,6 +1,3 @@
-/* * {
-  font-family: "Open Sans", sans-serif;
-} */
 body {
   height: 100vh;
 }
@@ -58,7 +55,6 @@ footer{
 .basket-item:hover .basket-item__img::before {
   content: "";
   width: 100%;
-  /* margin-left: 5px; */
   height: 99%;
   z-index: 99;
   position: absolute;
@@ -266,6 +262,7 @@ footer{
   .checkout {
     top: auto;
     transform: translate(-50%);
+    -ms-transform: translate(-50%, -50%);
   }
   .price {
     position: relative;

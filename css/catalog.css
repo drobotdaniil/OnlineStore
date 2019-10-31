@@ -14,7 +14,6 @@ header {
   font-family: "Roboto", sans-serif;
   font-family: "Open Sans", sans-serif;
 */
-
 .catalog {
   display: flex;
   justify-content: space-around;
@@ -60,133 +59,23 @@ header {
 .item {
   margin-bottom: 54px;
 }
-
 /* filters */
-/* .filters {
-  display: none;
-} */
-/* .wrap-select {
-  width: 16.6%;
-  position: relative;
-}
-.wrap-select span {
-  font-size: 12px;
-  font-weight: 700;
-  position: absolute;
-  left: 12%;
-  top: 11%;
-}
-.filters .container .wrap-select select {
-  width: 100%;
-  font-size: 16px;
-  font-weight: 700;
-  border: none;
-  padding: 23px 19px;
-  outline: none;
-  cursor: pointer;
-  color: #f14a58;
-}
-select:focus > option {
-  font-size: 12px;
-  font-weight: 700;
-  color: #000000;
-}
-select:focus > option:checked {
-  color: #f14a58;
-  background: #f7f7f7;
-}
-.show-filters .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  cursor: pointer;
-}
-.show-filters h3 {
-  font-size: 14px;
-  font-weight: 700;
-  padding-left: 10px;
-}
-.show-filters button {
-  border: none;
-  background: #ffffff;
-  transform: rotate(90deg);
-}
-.filters .container {
-  display: flex;
-  user-select: none;
-}
-
-.stupid {
-  display: none;
-  flex-wrap: wrap;
-  padding-top: 40px;
-}
-.visible {
-  display: flex;
-}
-.hidden {
-  display: none;
-}
-.wrap-radio {
-  width: 50%;
-  margin-bottom: 20px;
-}
-.radios {
-  display: flex;
-  flex-direction: column;
-}
-.radios input {
-  display: none;
-}
-.radios input:checked + label {
-  color: #f14a58;
-}
-.wrap-radio h3 {
-  font-size: 17px;
-  font-weight: 700;
-  font-family: "Roboto", sans-serif;
-  margin-bottom: 25px;
-}
-.wrap-radio label {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #a8a8a8;
-}
-.wrap-radio label::before {
-  content: "\2022";
-  margin-right: 25px;
-} */
-
 .filters-bar {
-  /* font-size: 13px;
-  font-weight: 700; */
   padding: 21px 30px 21px 30px;
   position: relative;
   cursor: pointer;
-
-  /* width: 310.1px; */
 }
-/* .filters-bar h3::-moz-scrollbar {
-  width: 0px;
-  height: 0px;
-} */
 .filters-bar h3 {
   font-size: 13px;
   font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
   padding-right: 30px;
-  /* line-height: 117%; */
-  /* -ms-overflow-style: none; */
+  line-height: 120%;
 }
 .active-filter {
   color: #f14a58;
 }
-/* .filters-bar h3::-webkit-scrollbar { width: 0; } */
-
 .filters-bar + .hr {
   display: none;
 }
@@ -204,7 +93,6 @@ select:focus > option:checked {
   top: 16px;
 }
 .filters {
-  /* display: flex; */
   display: none;
   flex-wrap: wrap;
 }
@@ -214,9 +102,6 @@ select:focus > option:checked {
 .hidden {
   display: none;
 }
-/* .visibility{
-  display: block !important;
-} */
 .filters__item {
   width: 50%;
   position: relative;
@@ -272,7 +157,6 @@ select:focus > option:checked {
 .filters-item__radio input:checked + label:first-of-type {
   color: #000000;
 }
-
 .filters-item__radio label {
   font-size: 14px;
   transition: 0.3s all;
@@ -281,9 +165,6 @@ select:focus > option:checked {
   margin-bottom: 20px;
   color: #a8a8a8;
 }
-/* .filters-item__radio label:first-of-type{
-  color: #000000;
-} */
 .filters-item__radio label::before {
   content: "\2022";
   margin-right: 25px;
@@ -314,19 +195,13 @@ select:focus > option:checked {
     height: 70px;
     font-size: 20px;
   }
-  /* .stupid {
-    padding-top: 50px;
-  }
-  .wrap-radio {
-    width: 33.3%;
-    margin-bottom: 30px;
-  } */
   .filters-bar {
     padding: 25px 50px 25px 50px;
   }
   .btn-open,
   .filters-bar img {
     top: 19px;
+    right: 40px;
   }
   .filters-bar h3 {
     font-size: 14px;
@@ -355,16 +230,9 @@ select:focus > option:checked {
     height: 90px;
     font-size: 24px;
   }
-  /* .filters {
-    display: block;
-  }
-  .filters-tablet {
-    display: none;
-  } */
   .filters {
     display: flex;
   }
-
   .filters-bar {
     display: none;
   }
@@ -416,9 +284,6 @@ select:focus > option:checked {
   .filters-item__radio input:checked + label {
     background: #e5e5e5;
   }
-  /* .filters-item__radio input:checked + label:first-of-type {
-    color: #f14a58;
-  } */
   .filters-item__radio label {
     font-size: 0;
     margin-bottom: 0;

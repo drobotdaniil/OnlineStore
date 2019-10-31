@@ -36,8 +36,8 @@ window.catalog = [{
     hasNew: true,
     category: 'women',
     fashion: 'Casual style',
-    colors: ['Red'],
-    sizes: ['UK 9.5'],
+    colors: ['Red', "Black"],
+    sizes: ['UK 9.5', 'UK 10'],
     thumbnail: 'img/photo/nike.jpg', // replace with image extracted from item layout
     preview: ['img/photo/nike1.jpg', 'img/photo/nike2.jpg', 'img/photo/nike3.jpg'] // replace with paths to images extracted from item layout
 }, {
