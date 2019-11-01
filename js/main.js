@@ -19,7 +19,7 @@ burger.addEventListener('click', function () {
     }
     menu.classList.toggle('visible');
 });
-searchIco.addEventListener('click', function(){
+searchIco.addEventListener('click', function () {
     searchInput.classList.toggle('hidden-search-input');
     searchLabel.classList.toggle('hidden-search-label');
 });
@@ -29,16 +29,18 @@ function checkBasket() {
     }
 }
 function showBasketCounts() {
-    let counts = 0;
+    let totalCount = 0;
     let sum = 0;
-    for (let item in basket) {
-        counts += basket[item];
-        for (let key in catalog) {
-            if (item === catalog[key].id) {
-                if (catalog[key].discountedPrice != null) {
-                    sum += basket[item] * catalog[key].discountedPrice;
-                } else {
-                    sum += basket[item] * (catalog[key].price);
+    for (let elem in basket) {
+        for (let subElem in basket[elem]) {
+            totalCount += basket[elem][subElem].counts;
+            for (let good in catalog) {
+                if (elem === catalog[good].id) {
+                    if (catalog[good].discountedPrice != null) {
+                        sum += basket[elem][subElem].counts * catalog[good].discountedPrice;
+                    } else {
+                        sum += basket[elem][subElem].counts * (catalog[good].price);
+                    }
                 }
             }
         }
@@ -48,7 +50,8 @@ function showBasketCounts() {
     } else {
         cartPrice.innerHTML = "";
     }
-    cartCounter.innerHTML = counts;
+    cartCounter.innerHTML = totalCount;
+    return sum.toFixed(2);
 }
 checkBasket()
 showBasketCounts()

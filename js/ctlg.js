@@ -97,17 +97,17 @@ filtersDiv.addEventListener('click', function (e) {
 });
 
 function showFiltersBarTitles() {
-    let testArr = [];
-    let test = document.querySelectorAll('input:checked');
-    test.forEach(item => {
+    let titlesArr = [];
+    let checkedInputs = document.querySelectorAll('input:checked');
+    checkedInputs.forEach(item => {
         if (item.defaultValue == "Not selected") {
-            testArr.push(" " + item.closest('div').title)
+            titlesArr.push(" " + item.closest('div').title)
         }
         else {
-            testArr.push("<span class='active-filter'> " + item.defaultValue + "</span>")
+            titlesArr.push("<span class='active-filter'> " + item.defaultValue + "</span>")
         }
     });
-    return testArr;
+    return titlesArr;
 }
 function showSaleAdv() {
     if (window.innerWidth >= 1024) {

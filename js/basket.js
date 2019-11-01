@@ -12,87 +12,94 @@ function showBasket() {
         summaryBlock.style.display = "none";
     }
     else {
-        for (let item in basket) {
-            for (let key in catalog) {
-                if (catalog[key].id == item) {
-                    out += `<div class="basket__item basket-item">
+        for (let elem in basket) {
+            for (let subElem in basket[elem]) {
+                for (let good in catalog) {
+                    if (elem === catalog[good].id) {
+                        out += `<div class="basket__item basket-item">
                         <div class="basket-item__img">
-                            <img src="${catalog[key].thumbnail}" alt="${catalog[key].title}">`;
-                    if (catalog[key].hasNew) {
-                        out += `<div class="stick-new">NEW</div>`;
-                    }
-                    out += `</div>
+                            <img src="${catalog[good].thumbnail}" alt="${catalog[good].title}">`;
+                        if (catalog[good].hasNew) {
+                            out += `<div class="stick-new">NEW</div>`;
+                        }
+                        out += `</div>
                     <div class="basket-item__desc basket-item-desc">
                         <h3 class="basket-item-desc__title">
-                            ${catalog[key].title}
+                            ${catalog[good].title}
                         </h3>
                         <h2 class="basket-item__price">`;
-                    if (catalog[key].discountedPrice != null) {
-                        out += `£${(catalog[key].discountedPrice).toFixed(2)}`;
-                    } else {
-                        out += `£${(catalog[key].price).toFixed(2)}`;
-                    }
-                    out += `</h2>
+                        if (catalog[good].discountedPrice != null) {
+                            out += `£${(catalog[good].discountedPrice).toFixed(2)}`;
+                        } else {
+                            out += `£${(catalog[good].price).toFixed(2)}`;
+                        }
+                        out += `</h2>
                         <p class="basket-item-desc__color">
-                            Color: ${catalog[key].colors[0]}
+                            Color: <span id="color">${basket[elem][subElem].color}</span>
                         </p>
                         <p class="basket-item-desc__size">
-                        Size: ${catalog[key].sizes[0]}
+                        Size: <span id="size">${basket[elem][subElem].size}</span>
                         </p>
                         <div class="basket-item-desc__quantity">
                             Quantity:
-                            <button class="quantity-minus" data-actminus="${catalog[key].id}">&ndash;</button>
-                            <span class="quantity">${basket[item]}</span>  
-                            <button class="quantity-plus" data-actplus="${catalog[key].id}">+</button>
+                            <button class="quantity-minus" data-actminus="${catalog[good].id}">&ndash;</button>
+                            <span class="quantity">${basket[elem][subElem].counts}</span>  
+                            <button class="quantity-plus" data-actplus="${catalog[good].id}">+</button>
                         </div>
-                        <button class="basket-item-desc__remove" data-delete="${catalog[key].id}">Remove item</button>
+                        <button class="basket-item-desc__remove" data-delete="${catalog[good].id}">Remove item</button>
                     </div>
                     </div>`;
-                    if (catalog[key].discountedPrice != null) {
-                        sum += basket[item] * catalog[key].discountedPrice;
-                    } else {
-                        sum += basket[item] * (catalog[key].price);
                     }
-                    summaryBlock.style.display = "block";
-                    fullPrice.innerHTML = "£" + sum.toFixed(2);
                 }
             }
         }
+        summaryBlock.style.display = "block";
+        fullPrice.innerHTML = "£" + showBasketCounts();
     }
     basketDiv.innerHTML = out;
 }
-showBasket()
+showBasket();
 basketDiv.addEventListener('click', function (e) {
     let targetPlus = e.target.dataset.actplus;
     let targetMinus = e.target.dataset.actminus;
     let targetDelete = e.target.dataset.delete;
+    let currentBasketItem = e.target.closest('.basket-item');
+    if(!currentBasketItem) return;
+    let colorSpan = currentBasketItem.querySelector('#color').innerHTML;
+    let sizeSpan = currentBasketItem.querySelector('#size').innerHTML;
     if (targetPlus) {
-        basket[targetPlus]++;
-        localStorage.setItem('basket', JSON.stringify(basket));
-        showBasketCounts();
-        showBasket();
+        _.find(basket[targetPlus], { size: sizeSpan, color: colorSpan }).counts++;
+        setShow();
     } else if (targetMinus) {
-        if (basket[targetMinus] > 1) basket[targetMinus]--;
-        else {
-            delete basket[targetMinus];
+        if (_.find(basket[targetMinus], { size: sizeSpan, color: colorSpan }).counts > 1) {
+            _.find(basket[targetMinus], { size: sizeSpan, color: colorSpan }).counts--;
+        } else {
+            basket[targetMinus] = basket[targetMinus].filter(item => {
+                return !(item.color === colorSpan && item.size === sizeSpan);
+            });
+            if (basket[targetMinus].length === 0) delete basket[targetMinus];
         }
-        localStorage.setItem('basket', JSON.stringify(basket));
-        showBasketCounts();
-        showBasket();
+        setShow();
     } else if (targetDelete) {
-        delete basket[targetDelete];
-        localStorage.setItem('basket', JSON.stringify(basket));
-        showBasketCounts();
-        showBasket();
+        basket[targetDelete] = basket[targetDelete].filter(item => {
+            return !(item.color === colorSpan && item.size === sizeSpan);
+        });
+        if (basket[targetDelete].length === 0) delete basket[targetDelete];
+        setShow();
     }
 });
+function setShow() {
+    localStorage.setItem('basket', JSON.stringify(basket));
+    showBasketCounts();
+    showBasket();
+}
 emptyBtn.addEventListener('click', function () {
     for (let key in basket) {
         delete basket[key];
         localStorage.setItem('basket', JSON.stringify(basket));
     }
     showBasket();
-    checkBasket();
+    // checkBasket();
     showBasketCounts();
     window.scrollTo(pageXOffset, 0);
 });

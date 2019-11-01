@@ -56,7 +56,7 @@ for (let key in catalog) {
         </div > `;
         } else {
             out += `
-            <button class="good-info__btn" id="add-to-bag" data-action="${catalog[key].id}" disabled>Add to bag</button>
+            <button class="good-info__btn" id="add-to-bag" data-action="${catalog[key].id}" disabled>Not available</button>
         </div > `;
         }
     }
@@ -66,38 +66,22 @@ goodDiv.innerHTML = out;
 const btnAddTo = document.querySelector('#add-to-bag');
 const smallImgDiv = document.querySelector('#small-img');
 
-
 btnAddTo.addEventListener('click', function (e) {
+    const inputColor = document.querySelector('input[name="color"]:checked').value;
+    const inputSize = document.querySelector('input[name="size"]:checked').value;
     let item = e.target.dataset.action;
     if (basket[item] != undefined) {
-        basket[item]++;
+        if (_.find(basket[item], { size: inputSize, color: inputColor })) {
+            _.find(basket[item], { size: inputSize, color: inputColor }).counts++
+        } else {
+            basket[item].push({ counts: 1, size: inputSize, color: inputColor });
+        }
     } else {
-        basket[item] = 1;
+        basket[item] = [{ counts: 1, size: inputSize, color: inputColor }];
     }
     localStorage.setItem('basket', JSON.stringify(basket));
     showBasketCounts();
 });
-// btnAddTo.addEventListener('click', function (e) {
-//     const inputColor = document.querySelector('input[name="color"]:checked').value;
-//     const inputSize = document.querySelector('input[name="size"]:checked').value;
-//     let item = e.target.dataset.action;
-
-//     if (basket[item] != undefined) {
-//         for (let key in basket[item]) {
-//             if (basket[item][key].size == inputSize && basket[item][key].color == inputColor) {
-//                 basket[item][key].counts++;
-//             } else {
-//                 basket[item].push({ counts: 1, size: inputSize, color: inputColor });
-//                 console.log("123")
-//             }
-//         }
-//     } else {
-//         basket[item] = [{ counts: 1, size: inputSize, color: inputColor }];
-//         console.log('888')
-//     }
-//     localStorage.setItem('basket', JSON.stringify(basket));
-//     showBasketCounts();
-// });
 
 smallImgDiv.addEventListener('click', function (e) {
     smallImgDiv.querySelector('.dark').classList.remove('dark');
