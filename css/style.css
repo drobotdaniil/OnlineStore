@@ -225,9 +225,11 @@ header a:hover {
 .banners-items-right__desc:last-of-type {
   left: 56%;
 }
-.banners-items-right__desc:last-of-type h3,
-.banners-items-right__desc:last-of-type p {
+.banners-items-right__desc:last-of-type h3{
   color: #f14a58;
+}
+.banners-items-right__desc:last-of-type p{
+  color: #757575;
 }
 .banners-items-left__desc h3,
 .banners-items-right__desc h3 {
