@@ -10,8 +10,7 @@ const oldPrice = document.querySelector('#old-price');
 const newPrice = document.querySelector("#new-price");
 const rightItemsGoods = document.querySelector('#right-items-goods');
 const leftItemsGoods = document.querySelector('#left-items-goods');
-const addToBag = document.querySelector("#add-to-bag");
-
+const bestOfferDiv = document.querySelector('#best-offer');
 //variables for slides
 let leftCurrent = 0;
 let rightCurrent = 0;
@@ -161,13 +160,15 @@ function calcSummary() {
 //EVENTS
 //event for NIKE RED item
 
-nike.addEventListener('click', function (e) {
+nike.addEventListener('click', function () {
   localStorage.setItem('good', nike.dataset.action);
 });
 
 //event for ADD TO BAG BEST OFFER
 
-addToBag.addEventListener('click', function () {
+bestOfferDiv.addEventListener('click', function (e) {
+  let btn = e.target.dataset.add;
+  if (!btn) return;
   let leftItem = document.querySelector('.active-item-left').dataset.action;
   let rightItem = document.querySelector('.active-item-right').dataset.action;
   if (basket[rightItem] != undefined) {

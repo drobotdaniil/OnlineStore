@@ -74,7 +74,7 @@
     </header>
     <main>
         <div class="container">
-            <section class="best-offer">
+            <section class="best-offer" id="best-offer">
                 <h1 class="best-offer__title">
                     Best offer
                 </h1>
@@ -100,8 +100,9 @@
                     <div class="total-block">
                         <p class="old-price" id="old-price"></p>
                         <p class="new-price"><span class="sign">=</span><span id="new-price"></span></p>
-                        <a class="add-to" href="basket.html" id="add-to-bag">Add to bag</a>
+                        <a class="add-to" href="basket.html" id="add-to-bag" data-add='add'>Add to bag</a>
                     </div>
+                    <a class="add-to another" href="basket.html" id="add-to-bag" data-add='add'>Add to bag</a>
                 </div>
             </section>
         </div>
@@ -232,8 +233,8 @@
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
     <script src="data/best-offer.js"></script>
     <script src="data/catalog.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/start.js"></script>
+    <script src="js/es5/main.js"></script>
+    <script src="js/es5/start.js"></script>
 </body>
 
 </html>
