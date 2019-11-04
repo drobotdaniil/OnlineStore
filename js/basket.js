@@ -1,12 +1,14 @@
+//DOM ELEMENTS
 const basketDiv = document.querySelector('#basketDiv');
 const fullPrice = document.querySelector('#full-price');
 const summaryBlock = document.querySelector("#summary-price");
+const discountPrice = document.querySelector('#discount-price');
 const emptyBtn = document.querySelector("#empty-btn");
 const buyBtn = document.querySelector('#buy-btn');
-
+//FUNCTIONS
+//FUNC FOR SHOWING GOODS FROM BASKET OBJ
 function showBasket() {
     let out = '';
-    let sum = 0;
     if (Object.keys(basket).length == 0) {
         out += '<div class="empty-info">Your shopping bag is empty. Use Catalog to add new items</div>';
         summaryBlock.style.display = "none";
@@ -53,12 +55,26 @@ function showBasket() {
                 }
             }
         }
+        if(checkBsktForLeft() && checkBsktForRight()){
+            discountPrice.classList.remove('hidden');
+        } else{
+            discountPrice.classList.add('hidden');
+        }
         summaryBlock.style.display = "block";
         fullPrice.innerHTML = "£" + showBasketCounts();
     }
     basketDiv.innerHTML = out;
 }
+//FUNC FOR BASKETDIV EVENT, JUST FOR AWOIDING DUPLICATION
+function setShow() {
+    localStorage.setItem('basket', JSON.stringify(basket));
+    showBasketCounts();
+    showBasket();
+}
+//RUN
 showBasket();
+//EVENTS
+//EVENT FOR PLUS/MINUS/DELETE NEEDED GOOD
 basketDiv.addEventListener('click', function (e) {
     let targetPlus = e.target.dataset.actplus;
     let targetMinus = e.target.dataset.actminus;
@@ -88,21 +104,17 @@ basketDiv.addEventListener('click', function (e) {
         setShow();
     }
 });
-function setShow() {
-    localStorage.setItem('basket', JSON.stringify(basket));
-    showBasketCounts();
-    showBasket();
-}
+//EVENT FOR MAKING EMPTY BASKET
 emptyBtn.addEventListener('click', function () {
     for (let key in basket) {
         delete basket[key];
         localStorage.setItem('basket', JSON.stringify(basket));
     }
     showBasket();
-    // checkBasket();
     showBasketCounts();
     window.scrollTo(pageXOffset, 0);
 });
+//EVENT FOR CHECKOUT BTN
 buyBtn.addEventListener('click', function () {
     for (let key in basket) {
         delete basket[key];

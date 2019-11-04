@@ -1,8 +1,12 @@
+//DOM ELEMENTS
 const goodDiv = document.querySelector('#good');
-let test = localStorage.getItem('good');
+//GET ITEM FROM LS AND SET IT IN ITEM
+let item = localStorage.getItem('good');
+//OUT VAR
 let out = '';
+//LOOP FOR CREATING GOOD
 for (let key in catalog) {
-    if (catalog[key].id == test) {
+    if (catalog[key].id == item) {
         out += `<div class="good__preview">
         <div class="full-img">
             <img src="${catalog[key].preview[0]}" alt="${catalog[key].title}" id="full-img">
@@ -32,7 +36,6 @@ for (let key in catalog) {
                     out += `<input id="size${i}" type="radio" name="size"  value="${catalog[key].sizes[i]}">
                     <label for="size${i}">${catalog[key].sizes[i]}</label>`;
                 }
-
             }
             out += `</div>`;
         }
@@ -62,10 +65,11 @@ for (let key in catalog) {
     }
 }
 goodDiv.innerHTML = out;
-
+//DOM ELEMENTS
 const btnAddTo = document.querySelector('#add-to-bag');
 const smallImgDiv = document.querySelector('#small-img');
-
+//EVENTS
+//EVENT FOR SETTING GOOD WITH 'CHECKED' COLOR AND SIZE IN BASKET
 btnAddTo.addEventListener('click', function (e) {
     const inputColor = document.querySelector('input[name="color"]:checked').value;
     const inputSize = document.querySelector('input[name="size"]:checked').value;
@@ -82,7 +86,7 @@ btnAddTo.addEventListener('click', function (e) {
     localStorage.setItem('basket', JSON.stringify(basket));
     showBasketCounts();
 });
-
+//EVENT FOR PHOTO SWITCHER
 smallImgDiv.addEventListener('click', function (e) {
     smallImgDiv.querySelector('.dark').classList.remove('dark');
     if (e.target.querySelector('img')) {

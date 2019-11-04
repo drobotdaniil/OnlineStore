@@ -197,7 +197,8 @@ footer{
   color: #f14a58;
   top: -25px;
   position: absolute;
-  right: 15%;
+  width: 100%;
+  text-align: center;
 }
 .discount-text {
   font-size: 12px;
@@ -270,9 +271,6 @@ footer{
     top: auto;
     transform: translate(0);
   }
-  .discount {
-    right: 0;
-  }
   .discount-text {
     font-size: 16px;
   }
@@ -328,5 +326,8 @@ footer{
   }
   .full-price {
     font-size: 24px;
+  }
+  .discount{
+    text-align: right;
   }
 }

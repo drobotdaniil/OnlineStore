@@ -1,3 +1,15 @@
+//CLOSEST POLIFILL
+(function (ELEMENT) {
+  ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
+  ELEMENT.closest = ELEMENT.closest || function closest(selector) {
+    if (!this) return null;
+    if (this.matches(selector)) return this;
+    if (!this.parentElement) { return null }
+    else return this.parentElement.closest(selector)
+  };
+}(Element.prototype));
+
+//DOM ELEMENTS
 const burger = document.querySelector('.burger');
 const burgerSpan = document.querySelector('.burger span');
 const burgerImg = document.querySelector('.burger img');
@@ -7,27 +19,17 @@ const cartPrice = document.querySelector('#cart-price');
 const searchIco = document.querySelector('#search-ico');
 const searchInput = document.querySelector('#search');
 const searchLabel = document.querySelector('#search-label');
+//INIT BASKET OBJ
 let basket = {};
 
-burger.addEventListener('click', function () {
-    if (burgerImg.classList.contains('hidden')) {
-        burgerSpan.classList.add('hidden');
-        burgerImg.classList.remove('hidden');
-    } else {
-        burgerSpan.classList.remove('hidden');
-        burgerImg.classList.add('hidden');
-    }
-    menu.classList.toggle('visible');
-});
-searchIco.addEventListener('click', function () {
-    searchInput.classList.toggle('hidden-search-input');
-    searchLabel.classList.toggle('hidden-search-label');
-});
+//FUNCTIONS
+//CHECK BASKET FUNC
 function checkBasket() {
     if (localStorage.getItem('basket') != null) {
         basket = JSON.parse(localStorage.getItem('basket'));
     }
 }
+//FUNC FOR CALC FULLPRICE AND COUNTS
 function showBasketCounts() {
     let totalCount = 0;
     let sum = 0;
@@ -45,6 +47,9 @@ function showBasketCounts() {
             }
         }
     }
+    if (checkBsktForRight() && checkBsktForLeft()) {
+      sum = sum - bestOffer.discount;
+    }
     if (Object.keys(basket).length != 0) {
         cartPrice.innerHTML = "£" + sum.toFixed(2);
     } else {
@@ -53,15 +58,38 @@ function showBasketCounts() {
     cartCounter.innerHTML = totalCount;
     return sum.toFixed(2);
 }
-checkBasket()
-showBasketCounts()
+//FUNC FOR CHECKING BASKET FOR AVAILABILITY RIGHT BESTOFFERS GOODS
+function checkBsktForRight() {
+  for (let good in bestOffer.right) {
+    if (basket.hasOwnProperty(bestOffer.right[good])) {
+      return true;
+    }
+  }
+}
+//FUNC FOR CHECKING BASKET FOR AVAILABILITY LEFT BESTOFFERS GOODS
+function checkBsktForLeft() {
+  for (let good in bestOffer.left) {
+    if (basket.hasOwnProperty(bestOffer.left[good])) {
+      return true;
+    }
+  }
+}
+//EVENTS FOR BURGER AND SEARCH-ICO
+burger.addEventListener('click', function () {
+  if (burgerImg.classList.contains('hidden')) {
+      burgerSpan.classList.add('hidden');
+      burgerImg.classList.remove('hidden');
+  } else {
+      burgerSpan.classList.remove('hidden');
+      burgerImg.classList.add('hidden');
+  }
+  menu.classList.toggle('visible');
+});
+searchIco.addEventListener('click', function () {
+  searchInput.classList.toggle('hidden-search-input');
+  searchLabel.classList.toggle('hidden-search-label');
+});
+//RUN
+checkBasket();
+showBasketCounts();
 
-// (function (ELEMENT) {
-//     ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
-//     ELEMENT.closest = ELEMENT.closest || function closest(selector) {
-//         if (!this) return null;
-//         if (this.matches(selector)) return this;
-//         if (!this.parentElement) { return null }
-//         else return this.parentElement.closest(selector)
-//     };
-// }(Element.prototype));
