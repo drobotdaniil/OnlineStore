@@ -13,228 +13,232 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="head">
-                <a href="start.html" class="logo">
-                    <span>Template</span>
-                </a>
-                <div class="bag">
-                    <a href="#" class="email">
-                        E-mail sing up
+    <div class="wrapper">
+        <header>
+            <div class="container">
+                <div class="head">
+                    <a href="start.html" class="logo">
+                        <span>Template</span>
                     </a>
-                    <a href="basket.html" class="cart">
-                        <img src="img/ico_bag.png" alt="ico-bag" class="cart-ico">
-                        Bag <span class="cart-price" id="cart-price"></span> (<span class="cart-counts"
-                            id="cart-counter">0</span>)
+                    <div class="bag">
+                        <a href="#" class="email">
+                            E-mail sing up
+                        </a>
+                        <a href="basket.html" class="cart">
+                            <img src="img/ico_bag.png" alt="ico-bag" class="cart-ico">
+                            Bag <span class="cart-price" id="cart-price"></span> (<span class="cart-counts"
+                                id="cart-counter">0</span>)
+                        </a>
+                        <div class="burger">
+                            <span></span>
+                            <img src="img/ico_close.png" alt="close" class="hidden">
+                        </div>
+                    </div>
+                </div>
+                <nav class="menu">
+                    <ul>
+                        <li class="menu__item"><a href="catalog.html">Women</a></li>
+                        <li class="menu__item"><a href="">Men</a></li>
+                        <li class="menu__item"><a href="">Handbags</a></li>
+                        <li class="menu__item"><a href="">Accessories</a></li>
+                        <li class="menu__item"><a href="">Sale</a></li>
+                        <li class="menu__item"><a href="">New Arrivals</a></li>
+                        <li class="menu__item"><a href="">Clearance</a></li>
+                        <li class="menu__item"><a href="">Store Locator</a></li>
+                    </ul>
+                    <label for="search" class="search-label hidden-search-label" id="search-label">
+                        <input type="text" placeholder="Style Name" id="search"
+                            class="search-input hidden-search-input">
+                        <img src="img/ico-search.png" alt="ico-search" class="search-ico" id="search-ico">
+                    </label>
+                </nav>
+            </div>
+            <div class="hr needed"></div>
+            <div class="container second">
+                <section class="banners-items">
+                    <a href="item.html" class="banners-items__left banners-items-left"
+                        data-action="07cf6ce2-6eee-4e78-a441-f257fd" id="nike">
+                        <img src="img/left-photo.png" alt="banner-left">
+                        <div class="banners-items-left__desc">
+                            <h3>Nike Red</h3>
+                        </div>
                     </a>
-                    <div class="burger">
-                        <span></span>
-                        <img src="img/ico_close.png" alt="close" class="hidden">
+                    <a href="catalog.html" class="banners-items__right">
+                        <img src="img/right-photo.png" alt="banner-right">
+                        <div class="banners-items-right__desc">
+                            <h3>Caps & Hats</h3>
+                            <p>Sale -50%</p>
+                        </div>
+                    </a>
+                </section>
+            </div>
+            <div class="hr"></div>
+        </header>
+        <main>
+            <div class="container">
+                <section class="best-offer" id="best-offer">
+                    <h1 class="best-offer__title">
+                        Best offer
+                    </h1>
+                    <p class="best-offer__desc">
+                        This offer is valid in-store and online. Prices displayed reflect this additional discount. This
+                        offer ends at 11:59 GMT on March 1st 2019
+                    </p>
+                    <div class="best-offer__goods">
+                        <div class="left-items">
+                            <img src="img/up-arrow.png" alt="up-arrow" class="up-arrow" id="up-arr-left">
+                            <div class="left-items__goods" id="left-items-goods">
+                            </div>
+                            <img src="img/d-arrow.png" alt="down-arrow" class="down-arrow" id="down-arr-left">
+                        </div>
+                        <div class="sign">+</div>
+                        <div class="right-items">
+                            <img src="img/up-arrow.png" alt="up-arrow" class="up-arrow" id="up-arr-right">
+                            <div class="right-items__goods" id="right-items-goods">
+                            </div>
+                            <img src="img/d-arrow.png" alt="down-arrow" class="down-arrow" id="down-arr-right">
+                        </div>
+                        <div class="sign">=</div>
+                        <div class="total-block">
+                            <p class="old-price" id="old-price"></p>
+                            <p class="new-price"><span class="sign">=</span><span id="new-price"></span></p>
+                            <a class="add-to" href="basket.html" id="add-to-bag" data-add='add'>Add to bag</a>
+                        </div>
+                        <a class="add-to another" href="basket.html" id="add-to-bag" data-add='add'>Add to bag</a>
+                    </div>
+                </section>
+            </div>
+            <div class="hr"></div>
+            <div class="container">
+                <section class="new-arrivals">
+                    <h1 class="new-arrivals__title">
+                        New arrivals
+                    </h1>
+                    <div class="new-arrivals__goods">
+                        <a href="item.html" class="item">
+                            <div class="item__img">
+                                <img src="img/best-offer-ts.png" alt="t-short">
+                                <span class="stick-new">NEW</span>
+                            </div>
+                            <p class="item__name">Only Skinny Jeans</p>
+                            <div class="item__price">
+
+                                <div class="item-price__new">£76.25</div>
+                            </div>
+                        </a>
+                        <a href="item.html" class="item">
+                            <div class="item__img">
+                                <img src="img/catalog/good9.png" alt="t-short">
+                                <span class="stick-new">NEW</span>
+                            </div>
+                            <p class="item__name">Neck Knitted Jumper</p>
+                            <div class="item__price">
+
+                                <div class="item-price__new">£76.25</div>
+                            </div>
+                        </a>
+                        <a href="item.html" class="item">
+                            <div class="item__img">
+                                <img src="img/catalog/good10.png" alt="t-short">
+
+                            </div>
+                            <p class="item__name">Turtle Neck Jumper in Rib</p>
+                            <div class="item__price">
+
+                                <div class="item-price__new">£76.25</div>
+                            </div>
+                        </a>
+                        <a href="item.html" class="item">
+                            <div class="item__img">
+                                <img src="img/catalog/good10.png" alt="t-short">
+
+                            </div>
+                            <p class="item__name">With Patchwork Crochet</p>
+                            <div class="item__price">
+
+                                <div class="item-price__new">£76.25</div>
+                            </div>
+                        </a>
+                    </div>
+                    <a href="catalog.html" class="new-arrivals__btn">All arrivals</a>
+                </section>
+            </div>
+            <div class="hr"></div>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="nav-about">
+                    <nav class="navigate">
+                        <div class="quick-links">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li class="link__item"><a href="">Store locator</a></li>
+                                <li class="link__item"><a href="">Gift cards</a></li>
+                                <li class="link__item"><a href="">Size guide</a></li>
+                                <li class="link__item"><a href="">About us</a></li>
+                                <li class="link__item"><a href="">Support</a></li>
+                            </ul>
+                        </div>
+                        <div class="customer-care">
+                            <h3>Customer Care</h3>
+                            <ul>
+                                <li class="link__item"><a href="">Customer service</a></li>
+                                <li class="link__item"><a href="">Track my order</a></li>
+                                <li class="link__item"><a href="">Return policy</a></li>
+                                <li class="link__item"><a href="">Shipping & delivery</a></li>
+                                <li class="link__item"><a href="">Careers</a></li>
+                                <li class="link__item"><a href="">Contact us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="about">
+                        <div class="quest-phone">
+                            <div class="questions">
+                                <h3>Questions</h3>
+                                <img src="img/twi_ico.png" alt="twitter-ico">
+                                <span>Tweet us <span>@template</span></span>
+                            </div>
+                            <div class="phone">
+                                <h3>Order by phone</h3>
+                                <a href="tel:+8-800-409-47-12">8-800-409-47-12</a>
+                            </div>
+                        </div>
+                        <p class="delivery">
+                            We have our own delivery service which operates in 23 major European cities. Delivery time -
+                            3-5
+                            days.
+                        </p>
+                        <div class="socials">
+                            <a href="facebook.com" class="fb"><img src="img/fb.png" alt="facebook"></a>
+                            <a href="twitter.com" class="tw"><img src="img/twi.png" alt="twitter"></a>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <nav class="menu">
-                <ul>
-                    <li class="menu__item"><a href="catalog.html">Women</a></li>
-                    <li class="menu__item"><a href="">Men</a></li>
-                    <li class="menu__item"><a href="">Handbags</a></li>
-                    <li class="menu__item"><a href="">Accessories</a></li>
-                    <li class="menu__item"><a href="">Sale</a></li>
-                    <li class="menu__item"><a href="">New Arrivals</a></li>
-                    <li class="menu__item"><a href="">Clearance</a></li>
-                    <li class="menu__item"><a href="">Store Locator</a></li>
-                </ul>
-                <label for="search" class="search-label hidden-search-label" id="search-label">
-                    <input type="text" placeholder="Style Name" id="search" class="search-input hidden-search-input">
-                    <img src="img/ico-search.png" alt="ico-search" class="search-ico" id="search-ico">
-                </label>
-            </nav>
-        </div>
-        <div class="hr"></div>
-        <div class="container">
-            <section class="banners-items">
-                <a href="item.html" class="banners-items__left banners-items-left"
-                    data-action="07cf6ce2-6eee-4e78-a441-f257fd" id="nike">
-                    <img src="img/left-photo.png" alt="banner-left">
-                    <div class="banners-items-left__desc">
-                        <h3>Nike Red</h3>
-                    </div>
-                </a>
-                <a href="catalog.html" class="banners-items__right">
-                    <img src="img/right-photo.png" alt="banner-right">
-                    <div class="banners-items-right__desc">
-                        <h3>Caps & Hats</h3>
-                        <p>Sale -50%</p>
-                    </div>
-                </a>
-            </section>
-        </div>
-        <div class="hr"></div>
-    </header>
-    <main>
-        <div class="container">
-            <section class="best-offer" id="best-offer">
-                <h1 class="best-offer__title">
-                    Best offer
-                </h1>
-                <p class="best-offer__desc">
-                    This offer is valid in-store and online. Prices displayed reflect this additional discount. This
-                    offer ends at 11:59 GMT on March 1st 2019
-                </p>
-                <div class="best-offer__goods">
-                    <div class="left-items">
-                        <img src="img/up-arrow.png" alt="up-arrow" class="up-arrow" id="up-arr-left">
-                        <div class="left-items__goods" id="left-items-goods">
-                        </div>
-                        <img src="img/d-arrow.png" alt="down-arrow" class="down-arrow" id="down-arr-left">
-                    </div>
-                    <div class="sign">+</div>
-                    <div class="right-items">
-                        <img src="img/up-arrow.png" alt="up-arrow" class="up-arrow" id="up-arr-right">
-                        <div class="right-items__goods" id="right-items-goods">
-                        </div>
-                        <img src="img/d-arrow.png" alt="down-arrow" class="down-arrow" id="down-arr-right">
-                    </div>
-                    <div class="sign">=</div>
-                    <div class="total-block">
-                        <p class="old-price" id="old-price"></p>
-                        <p class="new-price"><span class="sign">=</span><span id="new-price"></span></p>
-                        <a class="add-to" href="basket.html" id="add-to-bag" data-add='add'>Add to bag</a>
-                    </div>
-                    <a class="add-to another" href="basket.html" id="add-to-bag" data-add='add'>Add to bag</a>
-                </div>
-            </section>
-        </div>
-        <div class="hr"></div>
-        <div class="container">
-            <section class="new-arrivals">
-                <h1 class="new-arrivals__title">
-                    New arrivals
-                </h1>
-                <div class="new-arrivals__goods">
-                    <a href="item.html" class="item">
-                        <div class="item__img">
-                            <img src="img/best-offer-ts.png" alt="t-short">
-                            <span class="stick-new">NEW</span>
-                        </div>
-                        <p class="item__name">Only Skinny Jeans</p>
-                        <div class="item__price">
-
-                            <div class="item-price__new">£76.25</div>
-                        </div>
-                    </a>
-                    <a href="item.html" class="item">
-                        <div class="item__img">
-                            <img src="img/catalog/good9.png" alt="t-short">
-                            <span class="stick-new">NEW</span>
-                        </div>
-                        <p class="item__name">Neck Knitted Jumper</p>
-                        <div class="item__price">
-
-                            <div class="item-price__new">£76.25</div>
-                        </div>
-                    </a>
-                    <a href="item.html" class="item">
-                        <div class="item__img">
-                            <img src="img/catalog/good10.png" alt="t-short">
-
-                        </div>
-                        <p class="item__name">Turtle Neck Jumper in Rib</p>
-                        <div class="item__price">
-
-                            <div class="item-price__new">£76.25</div>
-                        </div>
-                    </a>
-                    <a href="item.html" class="item">
-                        <div class="item__img">
-                            <img src="img/catalog/good10.png" alt="t-short">
-
-                        </div>
-                        <p class="item__name">With Patchwork Crochet</p>
-                        <div class="item__price">
-
-                            <div class="item-price__new">£76.25</div>
-                        </div>
-                    </a>
-                </div>
-                <a href="catalog.html" class="new-arrivals__btn">All arrivals</a>
-            </section>
-        </div>
-        <div class="hr"></div>
-    </main>
-    <footer>
-        <div class="container">
-            <div class="nav-about">
-                <nav class="navigate">
-                    <div class="quick-links">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li class="link__item"><a href="">Store locator</a></li>
-                            <li class="link__item"><a href="">Gift cards</a></li>
-                            <li class="link__item"><a href="">Size guide</a></li>
-                            <li class="link__item"><a href="">About us</a></li>
-                            <li class="link__item"><a href="">Support</a></li>
-                        </ul>
-                    </div>
-                    <div class="customer-care">
-                        <h3>Customer Care</h3>
-                        <ul>
-                            <li class="link__item"><a href="">Customer service</a></li>
-                            <li class="link__item"><a href="">Track my order</a></li>
-                            <li class="link__item"><a href="">Return policy</a></li>
-                            <li class="link__item"><a href="">Shipping & delivery</a></li>
-                            <li class="link__item"><a href="">Careers</a></li>
-                            <li class="link__item"><a href="">Contact us</a></li>
-                        </ul>
-                    </div>
-                </nav>
-                <div class="about">
-                    <div class="quest-phone">
-                        <div class="questions">
-                            <h3>Questions</h3>
-                            <img src="img/twi_ico.png" alt="twitter-ico">
-                            <span>Tweet us <span>@template</span></span>
-                        </div>
-                        <div class="phone">
-                            <h3>Order by phone</h3>
-                            <a href="tel:+8-800-409-47-12">8-800-409-47-12</a>
-                        </div>
-                    </div>
-                    <p class="delivery">
-                        We have our own delivery service which operates in 23 major European cities. Delivery time - 3-5
-                        days.
-                    </p>
+            <div class="hr"></div>
+            <div class="container">
+                <div class="rights">
+                    <p>© 2010–2015, The Template Group inc.</p>
+                    <a href="#" class="share">Share<span>1 437</span></a>
+                    <ul class="notes">
+                        <li><a href="">Legal notice</a></li>
+                        <li><a href="">Privacy policy</a></li>
+                        <li><a href="">Site map</a></li>
+                    </ul>
                     <div class="socials">
                         <a href="facebook.com" class="fb"><img src="img/fb.png" alt="facebook"></a>
                         <a href="twitter.com" class="tw"><img src="img/twi.png" alt="twitter"></a>
                     </div>
-
                 </div>
             </div>
-        </div>
-        <div class="hr"></div>
-        <div class="container">
-            <div class="rights">
-                <p>© 2010–2015, The Template Group inc.</p>
-                <a href="#" class="share">Share<span>1 437</span></a>
-                <ul class="notes">
-                    <li><a href="">Legal notice</a></li>
-                    <li><a href="">Privacy policy</a></li>
-                    <li><a href="">Site map</a></li>
-                </ul>
-                <div class="socials">
-                    <a href="facebook.com" class="fb"><img src="img/fb.png" alt="facebook"></a>
-                    <a href="twitter.com" class="tw"><img src="img/twi.png" alt="twitter"></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
     <script src="data/best-offer.js"></script>
     <script src="data/catalog.js"></script>
-    <script src="js/es5/main.js"></script>
-    <script src="js/es5/start.js"></script>
+    <script src="js/es6/main.js"></script>
+    <script src="js/es6/start.js"></script>
 </body>
 
 </html>

@@ -48,13 +48,14 @@
                         <li class="menu__item"><a href="">Store Locator</a></li>
                     </ul>
                     <label for="search" class="search-label hidden-search-label" id="search-label">
-                        <input type="text" placeholder="Style Name" id="search" class="search-input hidden-search-input">
+                        <input type="text" placeholder="Style Name" id="search"
+                            class="search-input hidden-search-input">
                         <img src="img/ico-search.png" alt="ico-search" class="search-ico" id="search-ico">
                     </label>
                 </nav>
             </div>
-            <div class="hr"></div>
-            <div class="container">
+            <div class="hr needed"></div>
+            <div class="container second">
                 <h2 class="title-basket">
                     Shopping bag
                 </h2>
@@ -100,6 +101,13 @@
                 </div>
             </section>
             <div class="hr"></div>
+            <div class="modal-window" id="modal-window">
+                <h2 class="modal-window__title">Remove item?</h2>
+                <div class="btns">
+                    <button class="modal-window__agree" id="agree">Yes</button>
+                    <button class="modal-window__not" id="not-agree">No</button>
+                </div>
+            </div>
         </main>
         <footer>
             <div class="container">
@@ -173,8 +181,8 @@
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
     <script src="data/best-offer.js"></script>
     <script src="data/catalog.js"></script>
-    <script src="js/es5/main.js"></script>
-    <script src="js/es5/basket.js"></script>
+    <script src="js/es6/main.js"></script>
+    <script src="js/es6/basket.js"></script>
 </body>
 
 </html>

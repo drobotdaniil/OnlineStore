@@ -1,5 +1,23 @@
+body {
+  height: 100vh;
+}
 header {
   margin-bottom: 0;
+}
+
+main {
+  flex: 1 0 auto;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+footer {
+  flex: 0 0 auto;
+}
+.needed {
+  top: 70px;
 }
 .active a {
   color: #f14a58;
@@ -20,6 +38,11 @@ header {
   flex-wrap: wrap;
   padding-top: 60px;
 }
+/* 
+.item:nth-of-type(2n){
+  margin-left: 5%
+} */
+
 .mobile,
 .laptop,
 .desctop {
@@ -64,6 +87,10 @@ header {
   padding: 21px 30px 21px 30px;
   position: relative;
   cursor: pointer;
+  margin-top: 70px;
+}
+.second {
+  margin-top: 0;
 }
 .filters-bar h3 {
   font-size: 13px;
@@ -184,6 +211,12 @@ header {
     padding: 24px 0 24px 20px;
     font-size: 16px;
   }
+  .second {
+    margin-top: 0;
+  }
+  .needed {
+    top: 121px;
+  }
   .catalog {
     justify-content: space-between;
   }
@@ -197,6 +230,7 @@ header {
   }
   .filters-bar {
     padding: 25px 50px 25px 50px;
+    margin-top: 118px;
   }
   .btn-open,
   .filters-bar img {
@@ -230,11 +264,15 @@ header {
     height: 90px;
     font-size: 24px;
   }
+  .second {
+    margin-top: 118px;
+  }
   .filters {
     display: flex;
   }
   .filters-bar {
     display: none;
+    margin-top: 0;
   }
   .filters-bar + .hr {
     display: block;

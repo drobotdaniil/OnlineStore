@@ -6,6 +6,7 @@ const btnClose = document.querySelector('#btn-close');
 const filtersDiv = document.querySelector('#filters');
 const catalogDiv = document.querySelector('#catalog-out');
 const hrAfterFB = document.querySelector(' .filters-bar + .hr');
+const showMore = document.querySelector('#show-more');
 
 //HTML FOR BLOCK BETWEEN CATALOG GOODS
 const saleDiv = `<div class="sale-adv">
@@ -17,29 +18,32 @@ const saleDiv = `<div class="sale-adv">
 const filteredGoods =
   _.sortBy(catalog, ['dateAdded'])
     .reverse()
-    .filter(item => item.category === "women" && item.fashion === "Casual style");
+    .filter(item => item.category === "women");
 
 //FUNCTIONS    
 // FUNCTION FOR SHOWING CATALOG GOODS
-const showCatalog = () => {
+
+let goodsLength = 7;
+
+const showCatalog = (goods) => {
   let out = '';
-  for (let i = 0; i < filteredGoods.length; i++) {
-    out += `<a href="item.html" class="item" data-action="${filteredGoods[i].id}">
+  for (let i = 0; i < goods.length; i++) {
+    out += `<a href="item.html" class="item" data-action="${goods[i].id}">
         <div class="item__img">
-            <img src="${filteredGoods[i].thumbnail}" alt="${filteredGoods[i].title}">`;
-    if (filteredGoods[i].hasNew) {
+            <img src="${goods[i].thumbnail}" alt="${goods[i].title}">`;
+    if (goods[i].hasNew) {
       out += `<span class="stick-new">NEW</span>`;
     }
     out += `</div>
-        <p class="item__name">${filteredGoods[i].title}</p>
+        <p class="item__name">${goods[i].title}</p>
         <div class="item__price">`;
-    if (filteredGoods[i].price != filteredGoods[i].discountedPrice && filteredGoods[i].discountedPrice != null) {
-      out += `<div class="item-price__old"><span></span> £${(filteredGoods[i].price).toFixed(2)}</div>
-            <div class="item-price__new">£${(filteredGoods[i].discountedPrice).toFixed(2)}</div>`;
-    } else if (filteredGoods[i].discountedPrice == null) {
-      out += `<div class="item-price__new">£${(filteredGoods[i].price).toFixed(2)}</div>`;
+    if (goods[i].price != goods[i].discountedPrice && goods[i].discountedPrice != null) {
+      out += `<div class="item-price__old"><span></span> £${(goods[i].price).toFixed(2)}</div>
+            <div class="item-price__new">£${(goods[i].discountedPrice).toFixed(2)}</div>`;
+    } else if (goods[i].discountedPrice == null) {
+      out += `<div class="item-price__new">£${(goods[i].price).toFixed(2)}</div>`;
     } else {
-      out += `<div class="item-price__new">£${(filteredGoods[i].discountedPrice).toFixed(2)}</div>`;
+      out += `<div class="item-price__new">£${(goods[i].discountedPrice).toFixed(2)}</div>`;
     }
     out += `</div>
     </a>`;
@@ -52,8 +56,12 @@ const showCatalog = () => {
     if (i == 3) {
       out += `<div id="desctop" class="desctop"></div>`;
     }
+    if (i == goodsLength) {
+      break;
+    }
   }
   catalogDiv.innerHTML = out;
+  showSaleAdv()
 };
 //FUNC FOR FILTERSBAR
 function showFiltersBarTitles() {
@@ -71,6 +79,12 @@ function showFiltersBarTitles() {
 }
 //FUNCT FOR SALE ADV
 function showSaleAdv() {
+  let mobileDiv = document.querySelector('#mobile');
+  // console.log(mobileDiv)
+  let laptopDiv = document.querySelector('#laptop');
+  // console.log(laptopDiv)
+  let desctopDiv = document.querySelector('#desctop');
+  // console.log(desctopDiv)
   if (window.innerWidth >= 1024) {
     laptopDiv.style.display = "none";
     mobileDiv.style.display = "none";
@@ -89,13 +103,11 @@ function showSaleAdv() {
   }
 }
 //RUN
-showCatalog();
+showCatalog(filteredGoods);
 //DOM ELMS FOR SALE BLOCK
-const mobileDiv = document.querySelector('#mobile');
-const laptopDiv = document.querySelector('#laptop');
-const desctopDiv = document.querySelector('#desctop');
+
 //RUN SALE
-showSaleAdv();
+// showSaleAdv();
 //EVENTS 
 //EVENT FOR SETTING CLICKED GOOD's ID IN LOCALSTORAGE 
 catalogDiv.addEventListener('click', function (e) {
@@ -116,8 +128,12 @@ filtersBar.addEventListener('click', function () {
   btnClose.classList.toggle('visible');
   btnOpen.classList.toggle('hidden');
 });
-//EVENT FOR FILTERS, IF U CHECK SOME FILTER IN 'CHECKED', IT WILL BE PAINTED AND UPDATE FILTERBAR ABOBE FILTERS(LAPTOP)
+//EVENT FOR FILTERS, IF U CHECK SOME FILTER IN 'CHECKED', IT WILL BE PAINTED AND UPDATE FILTERBAR ABOVE FILTERS(LAPTOP)
 filtersDiv.addEventListener('click', function (e) {
+
+  // if(e.target.tagName === 'INPUT'){
+  //   e.stopPropagation();
+  // }
   const filtersItem = e.target.closest('div[current]');
   const filterTitle = filtersItem.querySelector('.filters-item__title');
   const selected = filtersItem.querySelector('.filters-item__selected');
@@ -133,5 +149,40 @@ filtersDiv.addEventListener('click', function (e) {
     filterTitle.classList.remove('filter-selected');
   }
   filtersBarH3.innerHTML = showFiltersBarTitles();
+  filter();
+});
+//event for show more
+showMore.addEventListener('click', function(){
+  goodsLength = filteredGoods;
+  showCatalog(filteredGoods);
 });
 
+
+
+
+function filter() {
+  const filterFashion = document.querySelector('.filters-item__radio[title="Fashion"]');
+  const filterColor = document.querySelector('.filters-item__radio[title="Color"]');
+  const filterSize = document.querySelector('.filters-item__radio[title="Size"]');
+  const checkedFashion = filterFashion.querySelector('input:checked').value;
+  const checkedColor = filterColor.querySelector('input:checked').value;
+  const checkedSize = filterSize.querySelector('input:checked').value;
+
+  let newGoods = Object.assign(filteredGoods);
+  if (checkedFashion === "Not selected") {
+    newGoods = newGoods;
+  } else {
+    newGoods = newGoods.filter(item => item.fashion === checkedFashion);
+  }
+  if (checkedColor === "Not selected") {
+    newGoods = newGoods;
+  } else {
+    newGoods = newGoods.filter(item => item.colors.indexOf(checkedColor) != -1);
+  }
+  if (checkedSize === "Not selected") {
+    newGoods = newGoods;
+  } else {
+    newGoods = newGoods.filter(item => item.sizes.indexOf(checkedSize) != -1);
+  }
+  showCatalog(newGoods)
+}

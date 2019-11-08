@@ -6,6 +6,18 @@ body {
   color: #000000;
   margin: 0 auto;
   font-family: "Open Sans", sans-serif;
+  height: 100vh;
+}
+main {
+  flex: 1 0 auto;
+}
+.wrapper{
+  display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+footer{
+  flex: 0 0 auto;
 }
 ul,
 li {
@@ -35,6 +47,11 @@ font-family: 'Roboto', sans-serif;
 header {
   margin-bottom: 53px;
 }
+
+/*
+
+ */
+
 header a:hover {
   color: #f14a58;
 }
@@ -43,6 +60,31 @@ header a:hover {
   margin: 0 auto;
   max-width: 1300px;
 }
+
+header .container:first-child {
+  left: 50%;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  margin: 0 auto;
+  transform: translate(-50%);
+  background: #ffffff;
+}
+.needed {
+  position: fixed !important;
+    width: 100%;
+    z-index: 99999;
+    top: 117px;
+    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%);
+}
+.second{
+  margin-top: 70px;
+}
+/* header .co{
+  margin-top: 116px;
+} */
 .head {
   display: flex;
   justify-content: space-between;
@@ -225,10 +267,10 @@ header a:hover {
 .banners-items-right__desc:last-of-type {
   left: 56%;
 }
-.banners-items-right__desc:last-of-type h3{
+.banners-items-right__desc:last-of-type h3 {
   color: #f14a58;
 }
-.banners-items-right__desc:last-of-type p{
+.banners-items-right__desc:last-of-type p {
   color: #757575;
 }
 .banners-items-left__desc h3,
@@ -382,11 +424,10 @@ header .banners-items__right img {
   user-select: none;
   cursor: pointer;
   width: 48%;
-
   max-width: 245px;
-
   /* max-width: 260px; */
 }
+
 .stick-new {
   position: absolute;
   font-size: 13px;
@@ -689,6 +730,9 @@ footer h3 {
   .container {
     padding: 0 40px;
   }
+  .second{
+    margin-top: 118px;
+  }
   .head {
     margin-top: 32px;
     margin-bottom: 22px;
@@ -955,6 +999,9 @@ footer h3 {
   }
   .head {
     margin-bottom: 15px;
+  }
+  .second{
+    margin-top: 116px;
   }
   .logo {
     font-size: 30px;

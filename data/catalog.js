@@ -208,4 +208,93 @@ window.catalog = [{
     sizes: ['UK 18'],
     thumbnail: 'img/catalog/good6.png', // replace with image extracted from item layout
     preview: ['img/photo/full_2-1.jpg', 'img/photo/full_2-2.jpg', 'img/photo/full_2-3.jpg'] // replace with paths to images extracted from item layout
+},
+{
+    id: 'ff665110-5e7f-435d-b1b4-651c3d5050ca',
+    dateAdded: '2017-04-05T10:04:16.000Z',
+    title: 'Paul & Joe Sister Jumper with Neon Trims',
+    description: '',
+    discountedPrice: 19.75,
+    price: 19.75,
+    hasNew: false,
+    category: 'women',
+    fashion: 'Nail the 90s',
+    colors: ['Blue'],
+    sizes: ['UK 18'],
+    thumbnail: 'img/catalog/good6.png', // replace with image extracted from item layout
+    preview: ['img/photo/full_2-1.jpg', 'img/photo/full_2-2.jpg', 'img/photo/full_2-3.jpg'] // replace with paths to images extracted from item layout
+},
+{
+    id: 'ff665110-5e7f-435d-b1b4-651c3d5050ca',
+    dateAdded: '2017-04-05T10:04:16.000Z',
+    title: 'Paul & Joe Sister Jumper with Neon Trims',
+    description: '',
+    discountedPrice: 19.75,
+    price: 19.75,
+    hasNew: false,
+    category: 'women',
+    fashion: 'Nail the 90s',
+    colors: ['Blue'],
+    sizes: ['UK 18'],
+    thumbnail: 'img/catalog/good6.png', // replace with image extracted from item layout
+    preview: ['img/photo/full_2-1.jpg', 'img/photo/full_2-2.jpg', 'img/photo/full_2-3.jpg'] // replace with paths to images extracted from item layout
+},
+{
+    id: 'ff665110-5e7f-435d-b1b4-651c3d5050ca',
+    dateAdded: '2017-04-05T10:04:16.000Z',
+    title: 'Paul & Joe Sister Jumper with Neon Trims',
+    description: '',
+    discountedPrice: 19.75,
+    price: 19.75,
+    hasNew: false,
+    category: 'women',
+    fashion: 'Nail the 90s',
+    colors: ['Blue'],
+    sizes: ['UK 18'],
+    thumbnail: 'img/catalog/good6.png', // replace with image extracted from item layout
+    preview: ['img/photo/full_2-1.jpg', 'img/photo/full_2-2.jpg', 'img/photo/full_2-3.jpg'] // replace with paths to images extracted from item layout
+},
+{
+    id: 'ff665110-5e7f-435d-b1b4-651c3d5050ca',
+    dateAdded: '2017-04-05T10:04:16.000Z',
+    title: 'Paul & Joe Sister Jumper with Neon Trims',
+    description: '',
+    discountedPrice: 19.75,
+    price: 19.75,
+    hasNew: false,
+    category: 'women',
+    fashion: 'Nail the 90s',
+    colors: ['Blue'],
+    sizes: ['UK 18'],
+    thumbnail: 'img/catalog/good6.png', // replace with image extracted from item layout
+    preview: ['img/photo/full_2-1.jpg', 'img/photo/full_2-2.jpg', 'img/photo/full_2-3.jpg'] // replace with paths to images extracted from item layout
+},{
+    id: 'ff665110-5e7f-435d-b1b4-651c3d5050ca',
+    dateAdded: '2017-04-05T10:04:16.000Z',
+    title: 'Paul & Joe Sister Jumper with Neon Trims',
+    description: '',
+    discountedPrice: 19.75,
+    price: 19.75,
+    hasNew: false,
+    category: 'women',
+    fashion: 'Nail the 90s',
+    colors: ['Blue'],
+    sizes: ['UK 18'],
+    thumbnail: 'img/catalog/good6.png', // replace with image extracted from item layout
+    preview: ['img/photo/full_2-1.jpg', 'img/photo/full_2-2.jpg', 'img/photo/full_2-3.jpg'] // replace with paths to images extracted from item layout
+},
+{
+    id: 'ff665110-5e7f-435d-b1b4-651c3d5050ca',
+    dateAdded: '2017-04-05T10:04:16.000Z',
+    title: 'Paul & Joe Sister Jumper with Neon Trims',
+    description: '',
+    discountedPrice: 19.75,
+    price: 19.75,
+    hasNew: false,
+    category: 'women',
+    fashion: 'Nail the 90s',
+    colors: ['Blue'],
+    sizes: ['UK 18'],
+    thumbnail: 'img/catalog/good6.png', // replace with image extracted from item layout
+    preview: ['img/photo/full_2-1.jpg', 'img/photo/full_2-2.jpg', 'img/photo/full_2-3.jpg'] // replace with paths to images extracted from item layout
 }];

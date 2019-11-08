@@ -5,6 +5,10 @@ const summaryBlock = document.querySelector("#summary-price");
 const discountPrice = document.querySelector('#discount-price');
 const emptyBtn = document.querySelector("#empty-btn");
 const buyBtn = document.querySelector('#buy-btn');
+const modalWindow = document.querySelector('#modal-window');
+const btnAgree = document.querySelector('#agree');
+const btnNotAgree = document.querySelector('#not-agree');
+
 //FUNCTIONS
 //FUNC FOR SHOWING GOODS FROM BASKET OBJ
 function showBasket() {
@@ -97,11 +101,23 @@ basketDiv.addEventListener('click', function (e) {
         }
         setShow();
     } else if (targetDelete) {
-        basket[targetDelete] = basket[targetDelete].filter(item => {
-            return !(item.color === colorSpan && item.size === sizeSpan);
+        modalWindow.style.display = 'block';
+        btnAgree.addEventListener('click', function(){
+            basket[targetDelete] = basket[targetDelete].filter(item => {
+                return !(item.color === colorSpan && item.size === sizeSpan);
+            });
+            if (basket[targetDelete].length === 0) delete basket[targetDelete];
+            modalWindow.style.display = 'none';
+            setShow();
         });
-        if (basket[targetDelete].length === 0) delete basket[targetDelete];
-        setShow();
+        btnNotAgree.addEventListener('click', function(){
+            modalWindow.style.display = 'none';
+        });
+        // basket[targetDelete] = basket[targetDelete].filter(item => {
+        //     return !(item.color === colorSpan && item.size === sizeSpan);
+        // });
+
+        // setShow();
     }
 });
 //EVENT FOR MAKING EMPTY BASKET
