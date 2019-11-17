@@ -215,7 +215,7 @@ footer {
     margin-top: 0;
   }
   .needed {
-    top: 121px;
+    top: 117px;
   }
   .catalog {
     justify-content: space-between;
@@ -264,8 +264,11 @@ footer {
     height: 90px;
     font-size: 24px;
   }
+  .needed {
+    top: 116px;
+  }
   .second {
-    margin-top: 118px;
+    margin-top: 116px;
   }
   .filters {
     display: flex;
@@ -278,7 +281,7 @@ footer {
     display: block;
   }
   header .hr:nth-child(2) {
-    display: none;
+    /* display: none; */
   }
   .filters__item {
     width: 16.66%;

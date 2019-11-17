@@ -4,6 +4,7 @@
 }
 body {
   color: #000000;
+  /* background: silver; */
   margin: 0 auto;
   font-family: "Open Sans", sans-serif;
   height: 100vh;
@@ -11,12 +12,12 @@ body {
 main {
   flex: 1 0 auto;
 }
-.wrapper{
+.wrapper {
   display: flex;
-	flex-direction: column;
-	min-height: 100%;
+  flex-direction: column;
+  min-height: 100%;
 }
-footer{
+footer {
   flex: 0 0 auto;
 }
 ul,
@@ -72,14 +73,14 @@ header .container:first-child {
 }
 .needed {
   position: fixed !important;
-    width: 100%;
-    z-index: 99999;
-    top: 117px;
-    margin: 0 auto;
-    left: 50%;
-    transform: translate(-50%);
+  width: 100%;
+  z-index: 99999;
+  top: 70px;
+  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%);
 }
-.second{
+.second {
   margin-top: 70px;
 }
 /* header .co{
@@ -353,6 +354,9 @@ header .banners-items__right img {
 .best-offer__goods .item {
   width: 100%;
   padding: 26px 0;
+}
+.best-offer__goods .item .item__name {
+  max-width: 100%;
 }
 .up-arrow,
 .down-arrow {
@@ -730,7 +734,10 @@ footer h3 {
   .container {
     padding: 0 40px;
   }
-  .second{
+  .needed {
+    top: 117px;
+  }
+  .second {
     margin-top: 118px;
   }
   .head {
@@ -1000,7 +1007,10 @@ footer h3 {
   .head {
     margin-bottom: 15px;
   }
-  .second{
+  .needed {
+    top: 116px;
+  }
+  .second {
     margin-top: 116px;
   }
   .logo {
@@ -1155,6 +1165,9 @@ footer h3 {
   }
 }
 @media (min-width: 1300px) {
+  header .container:first-child {
+    max-width: 1380px;
+  }
   .hr::before,
   .hr::after {
     position: absolute;

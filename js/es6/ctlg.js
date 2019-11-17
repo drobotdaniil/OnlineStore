@@ -155,6 +155,7 @@ filtersDiv.addEventListener('click', function (e) {
 showMore.addEventListener('click', function(){
   goodsLength = filteredGoods;
   showCatalog(filteredGoods);
+  showMore.style.display = "none";
 });
 
 
